@@ -12,7 +12,7 @@ SCENARIOS = {
             "name": "Draven Halvyr",
             "title": "Northern War-Beast Breeder",
             "short_description": "Breeds Frost Titans for military use.",
-            "request_summary": "Modify Frost Titans to prevent overheating while preserving fire ability.",
+            "request_summary": "Modify Frost Titans to prevent overheating while preserving fire ability",
         },
         "client_letter": """
 From: Draven Halvyr
@@ -24,13 +24,15 @@ I specialize in breeding Frost Titans, a species of dragon native to extreme arc
 
 However, their physiology presents a significant limitation. In temperate or warm environments, these dragons are prone to dangerous overheating, often leading to organ failure.
 
-Modify Frost Titans to prevent overheating while preserving fire ability.
+I have attempted crossbreeding with a more heat-resistant lineage, but none of the resulting eggs were viable. I suspect the issue lies deeper than simple inheritance.
+
+I would like to put in a request for a modified Frost Titan egg that prevents overheating while preserving fire ability.
 
 These dragons must remain stable under battlefield conditions.
 
-I have attempted crossbreeding with a more heat-resistant lineage, but none of the resulting eggs were viable. I suspect the issue lies deeper than simple inheritance.
+If such a modification is possible, I would like to proceed with contract negotiations immediately to include a clutch of five of these eggs.
 
-If such a modification is possible, I would like to proceed immediately.
+I hope to hear from you soon.
 
 -- Draven Halvyr
 """,
@@ -38,7 +40,7 @@ If such a modification is possible, I would like to proceed immediately.
 From: Dr. Elara Voss
 Lead Geneticist, Emberfall Hatchery
 
-To the Apprentices of Emberfall,
+To the Apprentice,
 
 Let’s take a moment to think through what we are actually dealing with before you begin assembling a construct.
 
@@ -49,8 +51,6 @@ The problem is not the protein itself, but where it is active.
 At present, Pyroxin-A6 is expressed throughout the organism, including within the bloodstream. This systemic distribution is what leads to overheating when the dragon is placed in warmer climates.
 
 We are not looking to remove this protein. Doing so would eliminate the dragon’s ability to produce fire entirely.
-
-Instead, the goal is more precise.
 
 Pyroxin-A6 must remain active where it is needed, but absent everywhere else.
 
@@ -74,20 +74,18 @@ Be mindful of this distinction as you design your system.
         "guidance": [
             "Restrict expression to laryngeal combustion glands",
             "Avoid expression in bloodstream and non-combustion tissues",
-            "Ensure activation only under laryngeal gland promoter control",
-            "Preserve fire production and cold-survival thermogenesis",
+            "Preserve fire production",
         ],
         "goal": "Design a system that localizes Pyroxin-A6 expression to the laryngeal glands.",
         "description": (
-            "Introductory Frost Titan assignment focused on placing Pyroxin-A6 "
-            "under laryngeal gland control."
+            "Introductory Frost Titan assignment focused on spacial control of Pyroxin-A6 "
         ),
     },
     "scenario_gal4_uas": {
         "name": "Bioluminescent Display Library",
         "difficulty": "Beginner",
         "species": {
-            "name": "Display Dragon",
+            "name": "Southern Bannerwings",
             "summary": "Performance lineage suited for visible wing pattern traits",
             "description": "Display dragons are bred for safe visual traits during choreographed flight.",
             "badge": "Selected for Beginner Contract",
@@ -96,17 +94,19 @@ Be mindful of this distinction as you design your system.
             "name": "Aurelia Veyne",
             "title": "Director of the Celestial Menagerie",
             "short_description": "Wants a reusable wing-color library for performance dragons.",
-            "request_summary": "Create a reusable modular expression system for wing-color variants.",
+            "request_summary": "Create a reusable modular expression system for wing-color variants",
         },
         "client_letter": """
 From: Aurelia Veyne
 Director of the Celestial Menagerie
 
-To the Genetic Design Division,
+Emberfall’s Design Team,
 
 I oversee the Celestial Menagerie, a performance hall known for rare and visually striking magical creatures.
 
-Our newest attraction is intended to be a line of bioluminescent display dragons. These dragons must glow in elegant patterns along the wings during flight, creating visible trails for night performances.
+Our newest attraction is intended to be a line of Southern Bannerwings, among the most elegant and visually captivating dragons in our collection. Their wings are broad and expressive, and in motion they create a natural canvas for display.
+
+For the night peformances I was wanting to present a line of bioluminescent display dragons. These dragons must glow in elegant patterns along the wings during flight, creating visible trails for night performances.
 
 However, I do not want a single fixed design.
 
@@ -114,7 +114,9 @@ The Menagerie changes its shows seasonally. One month may require blue wing patt
 
 The first dragon should display blue bioluminescence in the wings only.
 
-If this can become the foundation for a reusable color library, I would like to commission additional variants in the future.
+If this can become the foundation for a reusable color library, I would like to commission additional variants in the future, maybe we can even build a partnership, my dragons are beautiful and I am certain they would make excelent advertisement for your Hatchery.
+
+Sincerely, 
 
 - Aurelia Veyne
 """,
@@ -122,7 +124,7 @@ If this can become the foundation for a reusable color library, I would like to 
 From: Dr. Elara Voss
 Lead Geneticist, Emberfall Hatchery
 
-To the Modular Design Team,
+To the Apprentice,
 
 This request is not difficult because of the trait itself. Bioluminescence is relatively safe compared with combustion, venom secretion, or behavioral modification.
 
@@ -140,7 +142,7 @@ What trait should be expressed?
 
 A modular system should allow the “where” component to remain the same while the visible output can be swapped. The wing pattern should be controlled independently from the color-producing protein.
 
-For this assignment, the first dragon must show blue bioluminescence in the wings. But the stronger design is one that could later support an entire library of UAS-linked color variants.
+For this assignment, the first dragon must show blue bioluminescence in the wings. But the stronger design is one that could later support an entire library of color variants.
 
 Remember, sometimes a successful design is not just the one that works today. It is the one that can be reused tomorrow.
 
@@ -155,27 +157,26 @@ Remember, sometimes a successful design is not just the one that works today. It
         ],
         "assignment_label": "Scenario 1 - Beginner Design",
         "assignment_description": (
-            "This contract introduces GAL4/UAS modular expression by separating "
+            "This contract introduces modular expression by separating "
             "where expression happens from what gene is expressed."
         ),
-        "builder_title": "Build a reusable bioluminescent wing-color system.",
+        "builder_title": "Build a reusable bioluminescent wing-color system",
         "guidance": [
             "Restrict expression to wing pattern cells",
-            "Avoid expression in non-wing tissues",
-            "Ensure activation only under GAL4/UAS control",
+            "Ensure activation only under specific controls",
             "Preserve reusable color swapping for future variants",
         ],
         "goal": "",
         "description": (
-            "Beginner assignment focused on GAL4/UAS binary expression for reusable "
+            "Beginner assignment focused on modular expression for reusable "
             "wing-color variants."
         ),
     },
     "scenario_gal80_repression": {
-        "name": "Medicinal Mist Dragon",
+        "name": "Mistwardens",
         "difficulty": "Intermediate",
         "species": {
-            "name": "Medicinal Mist Dragon",
+            "name": "Mistwardens",
             "summary": "Hospice lineage that secretes therapeutic mist from skin-associated glands",
             "description": (
                 "Medicinal Mist Dragons produce healing vapor from specialized skin glands, "
@@ -193,19 +194,21 @@ Remember, sometimes a successful design is not just the one that works today. It
 From: Sister Maela Vire
 Warden of the Verdant Hospice
 
-To the Apprentices of Emberfall,
+Dear Emberfall Hatchery specialists, 
 
 I oversee a hospice that treats wounded riders, burned handlers, and injured field beasts.
 
-For years, we have used Medicinal Mist Dragons to calm pain and support wound recovery. When properly bred, these dragons release a soft healing vapor from specialized glands along the skin. The mist is gentle, portable, and useful in places where ordinary treatment is difficult.
+For years, we have used medicinal mist dragons to calm pain and support wound recovery. When properly bred, these dragons release a soft healing vapor from specialized glands along the skin. The mist is gentle, portable, and useful in places where ordinary treatment is difficult.
 
-Recently, however, several hatchlings from a promising line developed severe breathing problems. The mist was produced, but the dragons became weak after repeated use. Some could no longer fly for more than a few minutes.
+Recently, however, several of our hatchlings from a promising line developed severe breathing problems. The mist was produced, but the dragons became weak after repeated use. Some could no longer fly for more than a few minutes.
 
-I need a modified Medicinal Mist Dragon that can still produce healing mist from the skin glands, but does not damage its own lungs or airway tissue.
+I need a modified Mistwarden that can still produce healing mist from the skin glands, but does not damage its own lungs or airway tissue.
 
 The dragon must remain healthy enough to work near patients for long periods.
 
 If Emberfall can solve this safely, our hospice would be deeply grateful.
+
+May the Gods be with you,
 
 - Sister Maela Vire
 """,
@@ -213,7 +216,7 @@ If Emberfall can solve this safely, our hospice would be deeply grateful.
 From: Dr. Elara Voss
 Lead Geneticist, Emberfall Hatchery
 
-To the Research Team,
+To the Apprentice,
 
 This assignment is about precision.
 
@@ -222,8 +225,6 @@ The client is not asking us to create an entirely new healing trait. Medicinal M
 The challenge is that the promoter we normally use for this type of secretory tissue is not perfectly specific.
 
 The glandular promoter is useful because it activates expression in mist-producing skin glands. However, previous work has shown that it can also become active in airway-associated secretory cells.
-
-That matters here.
 
 Aureolin is beneficial when released from external mist glands, but it can be harmful if produced in lung or airway tissue. In that location, it may thicken respiratory surfaces and interfere with breathing.
 
@@ -244,13 +245,12 @@ Think about whether there is a way to keep the broad usefulness of the glandular
         ],
         "assignment_label": "Scenario 2 - Intermediate Design",
         "assignment_description": (
-            "This contract introduces GAL80 repression for subtractive tissue specificity."
+            "This contract introduces strategies for subtractive tissue specificity."
         ),
-        "builder_title": "Create a safe medicinal mist expression system.",
+        "builder_title": "Create a safe medicinal mist expression system",
         "guidance": [
             "Restrict expression to mist-producing skin glands",
             "Avoid expression in lung and airway-associated cells",
-            "Ensure activation only where glandular GAL4 is not blocked by airway GAL80",
             "Preserve therapeutic Aureolin mist production",
         ],
         "goal": "",
@@ -264,10 +264,10 @@ Think about whether there is a way to keep the broad usefulness of the glandular
         "difficulty": "Intermediate",
         "species": {
             "name": "Forge Drake",
-            "summary": "Industrial species with highly reactive Pyroxin-A6 flame output",
+            "summary": "Industrial species with highly reactive Pyroxin-A23 flame output",
             "description": (
                 "Industrial dragons capable of producing extremely high-temperature flame. "
-                "Their Pyroxin-A6 variant is highly reactive and dangerous if misregulated."
+                "Their Pyroxin-A23 variant is highly reactive and dangerous if misregulated."
             ),
             "badge": "Selected for Intermediate Contract",
         },
@@ -289,29 +289,29 @@ Think about whether there is a way to keep the broad usefulness of the glandular
             "This contract introduces dual-signal control using temperature-dependent activation "
             "and handler-triggered inducible control."
         ),
-        "builder_title": "Create a dual-signal Forge Drake fire control system.",
+        "builder_title": "Create a dual-signal Forge Drake fire control system",
         "guidance": [
             "Restrict expression to laryngeal combustion glands",
             "Avoid expression from heat alone or handler activation alone",
-            "Ensure activation only under both forge heat and deliberate doxycycline-triggered control",
-            "Preserve full Pyroxin-A6 fire output when both conditions are met",
+            "Ensure activation only under both forge heat and deliberate handler control",
+            "Preserve full Pyroxin-A23 fire output when both conditions are met",
         ],
         "goal": "",
         "client_letter": """
 From: Master Ivar Thorne
 Industrial Forge Operator
 
-To the Forge Biology Unit,
+Dear Dr. Voss,
 
 I operate a series of high-temperature forges and have long relied on Forge Drakes for metalwork. Their fire output is unmatched, hot enough to handle alloys that no conventional system can process.
 
 However, they are proving increasingly difficult to manage.
 
-The heat of the forge itself seems to excite them. Once inside, they grow restless, agitated, almost eager, and will often release bursts of flame without command. I have lost multiple workstations to these incidents. The last nearly cost me the entire foundry.
+The heat of the forge itself seems to excite them. Once inside, they grow restless, agitated, almost eager, and will often release bursts of flame without command. I have lost multiple workstations to these incidents. The last nearly cost me my entire workplace.
 
 I need a modified variant that maintains their full fire-producing capability, but only under strict control.
 
-Specifically:
+These are my requests:
 
 - The dragon must only produce fire within the forge environment
 - It must not activate spontaneously, even when exposed to heat
@@ -327,11 +327,11 @@ If this can be done, I am prepared to move forward immediately.
 From: Dr. Elara Voss
 Lead Geneticist, Emberfall Hatchery
 
-To the Control Systems Team,
+To the Apprentice,
 
-This is a more nuanced problem than the trial assignment, so take your time before assembling anything.
+This is a more nuanced problem, so take your time before assembling anything.
 
-Forge Drakes already possess a highly efficient combustion system. Pyroxin-A6 is expressed in the correct tissue, and its output is not the issue. The problem lies in how easily that system is activated.
+Forge Drakes already possess a highly efficient combustion system. Pyroxin-A23 is expressed in the correct tissue, and its output is not the issue. The problem lies in how easily that system is activated.
 
 From the client’s description, it is clear that environmental heat alone is enough to push the system into activation. The forge provides a naturally high-temperature environment, and the dragons are responding to it directly.
 
@@ -341,11 +341,7 @@ If fire production is already sensitive to temperature, we can use that to our a
 
 However, as we have seen, temperature alone is not sufficient control. The dragons are activating spontaneously simply by being in the environment. That is exactly what we need to prevent.
 
-So, we are not trying to remove this sensitivity. We are trying to refine it.
-
 The system should only activate when the dragon is both in the correct environment and has received an additional, deliberate trigger from the handler.
-
-In other words, one condition should not be enough.
 
 Think in terms of multiple requirements. The biological system you design should require more than a single signal before it becomes active. If either condition occurs on its own, nothing should happen.
 
@@ -356,8 +352,8 @@ As always, consider what happens when the system is only partially satisfied. Th
 - Dr. Elara Voss
 """,
         "description": (
-            "Intermediate Forge Drake assignment focused on AND-gated Pyroxin-A6 expression "
-            "through heat-responsive and Tet-On control."
+            "Intermediate Forge Drake assignment focused on AND-gated Pyroxin-A23 expression "
+            "through heat-responsive and handler control."
         ),
     },
     "scenario_royal_guardian": {
@@ -382,26 +378,25 @@ As always, consider what happens when the system is only partially satisfied. Th
 From: Lady Seraphine Valoryn
 Royal Steward of the Inner Court
 
-To the Royal Design Office,
+To the Lead Scientists of Emberfall Hatchery,
 
 I write on behalf of Her Majesty’s household regarding a private commission of considerable importance.
 
-The Crown requires a bonded guardian dragon for the young princess. This dragon will be raised alongside her from an early age so that the two may form a lasting bond. It must grow within the palace itself, in close proximity to attendants, tutors, and the royal family.
+The Crown requires a bonded guardian dragon for the young Princess. This dragon will be raised alongside her from an early age so that the two may form a lasting bond. It must grow within the palace itself, in close proximity to attendants, tutors, and the royal family.
 
-For this reason, its defensive trait must remain completely inactive during early development.
+For this reason, its defensive traits must remain completely inactive during early development.
 
-At maturity, however, the dragon must be capable of defending the princess against any threat. In such circumstances, that trait is not optional. It is a necessary safeguard.
+At maturity, however, the dragon must be capable of defending the princess against any threat. In such circumstances, that traits are not optional. They are necessary safeguards for the Princess' life.
 
-This presents a clear constraint.
+This presents a clear constraint. The dragon must not activate its defensive traits at any point during juvenile development and it must remain entirely safe to raise within the palace environment.
 
-- The dragon must not activate its defensive trait at any point during juvenile development
-- It must remain entirely safe to raise within the palace environment
-- The defensive trait must become available only after the dragon reaches maturity
-- Once active, the system must remain reliable for the remainder of its life
+That being said, the defensive traits must become available only after the dragon reaches maturity and once active, the system must remain reliable for the remainder of its life.
 
 This creature must be both companion and protector. It must grow beside the princess without posing a danger, and later stand as her final defense.
 
 I trust Emberfall understands the importance of this request.
+
+The Court awaits your response for approval.
 
 -- Lady Seraphine Valoryn
 """,
@@ -409,7 +404,7 @@ I trust Emberfall understands the importance of this request.
 From: Dr. Elara Voss
 Lead Geneticist, Emberfall Hatchery
 
-To the Apprentices of Emberfall,
+To the Apprentice,
 
 This commission has already been completed.
 
@@ -423,15 +418,15 @@ The defensive trait must not be available at any point during early development.
 
 At the same time, the system must become available later in the dragon’s life. Once that transition occurs, it must remain stable and reliable. There is no tolerance for reversion.
 
-This is not a question of simply controlling activity.
+This is not a question of simply controlling activity. It is a question of whether the system itself can change state.
 
-It is a question of whether the system itself can change state.
-
-You are looking for a way to block access to the defensive trait entirely at first, and then, following a specific developmental event, allow that access to be permanently restored.
+You are looking for a way to block access to the defensive traits entirely at first, and then, following a specific developmental event, allow that access to be permanently restored.
 
 If your design allows even minimal activity before that transition, or if it can revert afterward, it does not meet the requirements.
 
-As for the base animal, I would suggest working from a Velaryn Court Drake. They are known for their calm temperament, strong bonding behavior, and stable development in enclosed environments. The royal line is traditionally bred with deep violet scaling, which aligns with the expectations of the court.
+In terms of developmental timing, I think relying on the first moulting season is a reasonable trigger. The first moult is a clear, discrete event that happens at a predictable time in development.
+
+As for the base animal, I would suggest working from a Velaryn Court Drake. They are known for their calm temperament, strong bonding behavior, and stable development in enclosed environments. Aditionally, posess very potent venom, which I believe will be satisfactory for defending the Princess. The royal line is also traditionally bred with deep violet scaling, which aligns with the expectations of the court.
 
 Treat this as practice, but do not treat it lightly. I will be evaluating your reasoning.
 
@@ -450,11 +445,11 @@ Treat this as practice, but do not treat it lightly. I will be evaluating your r
             "This teaching case introduces a state-changing unlock system for "
             "a royal guardian dragon."
         ),
-        "builder_title": "Build a maturity-unlocked royal guardian defense system.",
+        "builder_title": "Build a maturity-unlocked royal guardian defense system",
         "guidance": [
             "Restrict expression to venom gland tissue after maturity",
             "Avoid expression during juvenile development",
-            "Ensure activation only after the first maturity molt removes the STOP lock",
+            "Ensure activation only after the first maturity molt",
             "Preserve stable guardian defense after unlocking",
         ],
         "goal": "",
@@ -486,7 +481,7 @@ Treat this as practice, but do not treat it lightly. I will be evaluating your r
 From: Commander Elric Vayne
 Director of Covert Operations, Nightfall Division
 
-To the Nightfall Review Cell,
+Emberfall Hatchery,
 
 I am submitting a request for a reconnaissance-class dragon intended for covert deployment.
 
@@ -507,13 +502,15 @@ This is not a temporary effect. It is a controlled designation.
 
 Only dragons that pass training should ever possess it.
 
+A reminder, this request is confidential, our contracts have been sent over secure channels, and we expect discretion in handling this matter. 
+
 -- Commander Elric Vayne
 """,
         "scientist_letter": """
 From: Dr. Elara Voss
 Lead Geneticist, Emberfall Hatchery
 
-To the Certification Design Team,
+To the Apprentice,
 
 This case combines two layers of control, and you will need to treat them separately.
 
@@ -545,14 +542,14 @@ Think carefully about how to separate those two layers.
         ],
         "assignment_label": "Scenario 5 - Advanced Design",
         "assignment_description": (
-            "This contract combines Cre-ERT approval unlocking with circadian control "
+            "This contract combines external approval unlocking with circadian control "
             "of night camouflage."
         ),
-        "builder_title": "Build a certified circadian camouflage system.",
+        "builder_title": "Build a certified circadian camouflage system",
         "guidance": [
             "Restrict expression to scale pigment cells during nighttime conditions",
             "Avoid expression before covert certification",
-            "Ensure activation only after handler approval removes the STOP lock",
+            "Ensure activation only after handler approval",
             "Preserve natural day-night camouflage cycling after approval",
         ],
         "goal": "",
@@ -583,13 +580,13 @@ Think carefully about how to separate those two layers.
 From: Dr. Mireya Caldus
 Professor of Behavioral Neuroscience, Ardent University
 
-To the Research Team,
+Dear Dr. Elara Voss and the Emberfall Genetics Team,
 
 I am reaching out with a request that falls somewhat outside your usual scope.
 
-My laboratory studies the neural basis of complex behaviors across species. We typically source our research animals from a multispecies transgenics supplier. However, I have recently been granted special permission to pursue a project involving a dragon breed that your hatchery is uniquely equipped to produce.
+My laboratory studies the neural basis of complex behaviors across species. We typically source our research animals from a multispecies transgenics supplier. However, I have recently been granted special permission to pursue a project involving a Cairnkeeper Drakes.
 
-This supplier has declined to work with this species due to its behavioral profile.
+Our supplier has declined to work with this species due to its behavioral profile.
 
 The dragons I am studying display a form of compulsive hoarding. They will collect and guard objects of perceived value to an extent that interferes with feeding, rest, and social interaction. Attempts to interrupt this behavior often result in extreme distress responses.
 
@@ -597,11 +594,9 @@ Despite this, the behavior is consistent and measurable, which makes it an ideal
 
 Through prior work, my team has narrowed this behavior to activity in the nucleus accumbens and to a subset of reward-sensitive neurons. Reward-sensitive neurons are not exclusive to the nucleus accumbens; related populations exist across multiple brain regions, so region targeting and cell-type targeting are both required.
 
-My team is well aware that social bonding in these animals is strongly associated with oxytocin-expressing neurons. Preserving this system is critical. The compulsive hoarding behavior, however, appears to be driven by reward-processing circuits within the nucleus accumbens. These systems overlap anatomically but must be treated independently.
+My team is well aware that social bonding in these animals is strongly associated with oxytocin-expressing neurons also present in the nucleus accumbens. Preserving this system is critical. These systems overlap anatomically but must be treated independently.
 
-I am not interested in eliminating this system.
-
-I am interested in selectively reducing its pathological activation.
+I am not interested in eliminating this system. I am interested in selectively reducing its pathological activation.
 
 For this reason, I require a design that meets the following conditions:
 
@@ -616,13 +611,15 @@ If successful, this model will allow us to study how targeted modulation of a sp
 
 I understand that this is not your primary application domain, but I have been assured that your team is capable of this level of precision.
 
+Best Regards,
+
 Dr. Mireya Caldus
 """,
         "scientist_letter": """
 From: Dr. Elara Voss
 Lead Geneticist, Emberfall Hatchery
 
-To the Neural Design Team,
+To the Apprentice,
 
 This is not a standard assignment.
 
@@ -648,12 +645,6 @@ Where is the system active? Which cells are involved? Which cells must be exclud
 
 And most importantly, how do you ensure that your intervention is present only where those conditions intersect?
 
-- Target the nucleus accumbens
-- Target reward-sensitive neurons specifically
-- Preserve oxytocin-mediated bonding behavior
-- Avoid global neural suppression
-- Recognize that neuron subtypes exist across multiple regions
-
 There is no single correct design for this case. There are, however, many ways to fail it.
 
 I will not be evaluating whether your construct matches mine.
@@ -675,7 +666,7 @@ Dr. Elara Voss
             "This scenario tests intersectional neural targeting for a complex "
             "behavioral research model."
         ),
-        "builder_title": "Build a precise compulsive hoarding research model.",
+        "builder_title": "Build a precise compulsive hoarding research model",
         "guidance": [
             "Restrict expression to reward-sensitive neurons within the nucleus accumbens",
             "Avoid expression in reward-sensitive neurons outside the nucleus accumbens",
