@@ -1,6 +1,6 @@
-# Emberforge Hatchery
+# Emberfall Hatchery
 
-Emberforge Hatchery is a modular Streamlit learning game about synthetic biology design. Players read client requests, review guidance from the hatchery scientist, then assemble genetic constructs from scenario-specific components.
+Emberfall Hatchery is a modular Streamlit learning game about synthetic biology design. Players read client requests, review guidance from the hatchery scientist, then assemble genetic constructs from scenario-specific components.
 
 Each scenario teaches a different design idea, from simple tissue-specific expression to modular GAL4/UAS systems, repression, conditional unlocking, and intersectional neural targeting.
 

@@ -5,8 +5,8 @@ COMPONENT_GROUPS = {
     "Promoters": [
         {
             "id": "cmv",
-            "label": "CMV",
-            "display": "CMV promoter",
+            "label": "Constitutive (CMV) promoter",
+            "display": "Constitutive (CMV) promoter",
             "symbol": "pCMV",
             "role": "Constitutive promoter",
             "description": "Constitutive promoter that drives broad gene expression across many cell types.",
@@ -180,6 +180,22 @@ COMPONENT_GROUPS = {
             "symbol": "Cre-ERT",
             "role": "Drug-activated recombinase",
             "description": "Drug-activated recombinase system that becomes active only after handler-administered activation.",
+        },
+        {
+            "id": "flp",
+            "label": "FLP recombinase",
+            "display": "FLP recombinase",
+            "symbol": "FLP",
+            "role": "Recombinase switch",
+            "description": "Site-specific recombinase that recognizes FRT sequences and can remove DNA located between them.",
+        },
+        {
+            "id": "frt",
+            "label": "FRT site",
+            "display": "FRT site",
+            "symbol": "FRT",
+            "role": "FLP recognition site",
+            "description": "DNA recognition sequence targeted by FLP recombinase.",
         },
     ],
     "Genes": [
@@ -373,7 +389,7 @@ SCENARIO_COMPONENTS = {
             "bonding_neuron_promoter",
             "cmv",
         ],
-        "Control Systems": ["gal4", "uas", "gal80", "cre", "loxp"],
+        "Control Systems": ["gal4", "uas", "gal80", "cre", "loxp", "flp", "frt"],
         "Genes": ["calm_channel", "neuro_silencer", "gfp"],
         "Special Elements": ["stop_cassette", "terminator"],
     },

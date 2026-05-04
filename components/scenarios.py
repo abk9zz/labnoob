@@ -18,7 +18,7 @@ SCENARIOS = {
 From: Draven Halvyr
 Northern War-Beast Breeder
 
-To the Emberforge Hatchery,
+To the Hatchery Specialists,
 
 I specialize in breeding Frost Titans, a species of dragon native to extreme arctic climates. These creatures are massive, resilient, and highly sought after for military use due to their durability and sheer size.
 
@@ -36,9 +36,9 @@ If such a modification is possible, I would like to proceed immediately.
 """,
         "scientist_letter": """
 From: Dr. Elara Voss
-Lead Geneticist, Emberforge Hatchery
+Lead Geneticist, Emberfall Hatchery
 
-To the Apprentice,
+To the Apprentices of Emberfall,
 
 Let’s take a moment to think through what we are actually dealing with before you begin assembling a construct.
 
@@ -72,11 +72,10 @@ Be mindful of this distinction as you design your system.
         ),
         "builder_title": "Modify Frost Titans to prevent overheating while preserving fire ability.",
         "guidance": [
-            "Pyroxin-A6 is currently expressed throughout the body, causing systemic overheating.",
-            (
-                "Your goal is NOT to remove it, but to restrict its activity to the laryngeal "
-                "combustion glands while eliminating expression elsewhere."
-            ),
+            "Restrict expression to laryngeal combustion glands",
+            "Avoid expression in bloodstream and non-combustion tissues",
+            "Ensure activation only under laryngeal gland promoter control",
+            "Preserve fire production and cold-survival thermogenesis",
         ],
         "goal": "Design a system that localizes Pyroxin-A6 expression to the laryngeal glands.",
         "description": (
@@ -103,7 +102,7 @@ Be mindful of this distinction as you design your system.
 From: Aurelia Veyne
 Director of the Celestial Menagerie
 
-To the Emberforge Hatchery,
+To the Genetic Design Division,
 
 I oversee the Celestial Menagerie, a performance hall known for rare and visually striking magical creatures.
 
@@ -111,7 +110,7 @@ Our newest attraction is intended to be a line of bioluminescent display dragons
 
 However, I do not want a single fixed design.
 
-The Menagerie changes its shows seasonally. One month may require blue wing patterns, while another may require gold, violet, or green. I need a design system that allows Emberforge to create multiple wing-color variants without redesigning the entire dragon each time.
+The Menagerie changes its shows seasonally. One month may require blue wing patterns, while another may require gold, violet, or green. I need a design system that allows Emberfall to create multiple wing-color variants without redesigning the entire dragon each time.
 
 The first dragon should display blue bioluminescence in the wings only.
 
@@ -121,9 +120,9 @@ If this can become the foundation for a reusable color library, I would like to 
 """,
         "scientist_letter": """
 From: Dr. Elara Voss
-Lead Geneticist, Emberforge Hatchery
+Lead Geneticist, Emberfall Hatchery
 
-To the Apprentice,
+To the Modular Design Team,
 
 This request is not difficult because of the trait itself. Bioluminescence is relatively safe compared with combustion, venom secretion, or behavioral modification.
 
@@ -161,11 +160,10 @@ Remember, sometimes a successful design is not just the one that works today. It
         ),
         "builder_title": "Build a reusable bioluminescent wing-color system.",
         "guidance": [
-            (
-                "The client wants the first dragon to glow blue in wing patterns, but also "
-                "wants a reusable color library. Build a modular system that separates wing "
-                "targeting from the color-producing gene."
-            ),
+            "Restrict expression to wing pattern cells",
+            "Avoid expression in non-wing tissues",
+            "Ensure activation only under GAL4/UAS control",
+            "Preserve reusable color swapping for future variants",
         ],
         "goal": "",
         "description": (
@@ -188,14 +186,14 @@ Remember, sometimes a successful design is not just the one that works today. It
         "client": {
             "name": "Sister Maela Vire",
             "title": "Warden of the Verdant Hospice",
-            "short_description": "Needs a healing mist dragon that avoids airway damage.",
+            "short_description": "Provides palliative care using therapeutic mist dragons and requires strict control to prevent respiratory irritation in vulnerable patients.",
             "request_summary": "Create healing mist expression while blocking harmful airway expression.",
         },
         "client_letter": """
 From: Sister Maela Vire
 Warden of the Verdant Hospice
 
-To the Emberforge Hatchery,
+To the Apprentices of Emberfall,
 
 I oversee a hospice that treats wounded riders, burned handlers, and injured field beasts.
 
@@ -207,15 +205,15 @@ I need a modified Medicinal Mist Dragon that can still produce healing mist from
 
 The dragon must remain healthy enough to work near patients for long periods.
 
-If Emberforge can solve this safely, our hospice would be deeply grateful.
+If Emberfall can solve this safely, our hospice would be deeply grateful.
 
 - Sister Maela Vire
 """,
         "scientist_letter": """
 From: Dr. Elara Voss
-Lead Geneticist, Emberforge Hatchery
+Lead Geneticist, Emberfall Hatchery
 
-To the Apprentice,
+To the Research Team,
 
 This assignment is about precision.
 
@@ -250,10 +248,10 @@ Think about whether there is a way to keep the broad usefulness of the glandular
         ),
         "builder_title": "Create a safe medicinal mist expression system.",
         "guidance": [
-            (
-                "The glandular promoter is useful but too broad. Design a system that allows "
-                "Aureolin expression in mist glands while preventing expression in airway tissue."
-            ),
+            "Restrict expression to mist-producing skin glands",
+            "Avoid expression in lung and airway-associated cells",
+            "Ensure activation only where glandular GAL4 is not blocked by airway GAL80",
+            "Preserve therapeutic Aureolin mist production",
         ],
         "goal": "",
         "description": (
@@ -293,21 +291,17 @@ Think about whether there is a way to keep the broad usefulness of the glandular
         ),
         "builder_title": "Create a dual-signal Forge Drake fire control system.",
         "guidance": [
-            (
-                "Forge Drake Pyroxin-A6 must not activate from environmental heat alone or from "
-                "handler activation alone."
-            ),
-            (
-                "Design a system with two levels of control so Pyroxin-A6 expression requires "
-                "both forge heat and deliberate handler activation."
-            ),
+            "Restrict expression to laryngeal combustion glands",
+            "Avoid expression from heat alone or handler activation alone",
+            "Ensure activation only under both forge heat and deliberate Dox-triggered control",
+            "Preserve full Pyroxin-A6 fire output when both conditions are met",
         ],
         "goal": "",
         "client_letter": """
 From: Master Ivar Thorne
 Industrial Forge Operator
 
-To the Emberforge Hatchery,
+To the Forge Biology Unit,
 
 I operate a series of high-temperature forges and have long relied on Forge Drakes for metalwork. Their fire output is unmatched, hot enough to handle alloys that no conventional system can process.
 
@@ -331,9 +325,9 @@ If this can be done, I am prepared to move forward immediately.
 """,
         "scientist_letter": """
 From: Dr. Elara Voss
-Lead Geneticist, Emberforge Hatchery
+Lead Geneticist, Emberfall Hatchery
 
-To the Apprentice,
+To the Control Systems Team,
 
 This is a more nuanced problem than the trial assignment, so take your time before assembling anything.
 
@@ -388,7 +382,7 @@ As always, consider what happens when the system is only partially satisfied. Th
 From: Lady Seraphine Valoryn
 Royal Steward of the Inner Court
 
-To the Emberforge Hatchery,
+To the Royal Design Office,
 
 I write on behalf of Her Majesty’s household regarding a private commission of considerable importance.
 
@@ -407,15 +401,15 @@ This presents a clear constraint.
 
 This creature must be both companion and protector. It must grow beside the princess without posing a danger, and later stand as her final defense.
 
-I trust Emberforge understands the importance of this request.
+I trust Emberfall understands the importance of this request.
 
 -- Lady Seraphine Valoryn
 """,
         "scientist_letter": """
 From: Dr. Elara Voss
-Lead Geneticist, Emberforge Hatchery
+Lead Geneticist, Emberfall Hatchery
 
-To the Apprentice,
+To the Apprentices of Emberfall,
 
 This commission has already been completed.
 
@@ -458,11 +452,10 @@ Treat this as practice, but do not treat it lightly. I will be evaluating your r
         ),
         "builder_title": "Build a maturity-unlocked royal guardian defense system.",
         "guidance": [
-            (
-                "The defensive trait must be impossible during juvenile development, then "
-                "permanently available after the first maturity molt. Design a system that "
-                "changes state after a developmental event."
-            ),
+            "Restrict expression to venom gland tissue after maturity",
+            "Avoid expression during juvenile development",
+            "Ensure activation only after the first maturity molt removes the STOP lock",
+            "Preserve stable guardian defense after unlocking",
         ],
         "goal": "",
         "description": (
@@ -493,7 +486,7 @@ Treat this as practice, but do not treat it lightly. I will be evaluating your r
 From: Commander Elric Vayne
 Director of Covert Operations, Nightfall Division
 
-To the Emberforge Hatchery,
+To the Nightfall Review Cell,
 
 I am submitting a request for a reconnaissance-class dragon intended for covert deployment.
 
@@ -518,9 +511,9 @@ Only dragons that pass training should ever possess it.
 """,
         "scientist_letter": """
 From: Dr. Elara Voss
-Lead Geneticist, Emberforge Hatchery
+Lead Geneticist, Emberfall Hatchery
 
-To the Apprentice,
+To the Certification Design Team,
 
 This case combines two layers of control, and you will need to treat them separately.
 
@@ -557,10 +550,10 @@ Think carefully about how to separate those two layers.
         ),
         "builder_title": "Build a certified circadian camouflage system.",
         "guidance": [
-            (
-                "The camouflage system must be unavailable during training, then permanently "
-                "enabled by handler approval. Once enabled, it should follow the natural night cycle."
-            ),
+            "Restrict expression to scale pigment cells during nighttime conditions",
+            "Avoid expression before covert certification",
+            "Ensure activation only after handler approval removes the STOP lock",
+            "Preserve natural day-night camouflage cycling after approval",
         ],
         "goal": "",
         "description": (
@@ -582,15 +575,15 @@ Think carefully about how to separate those two layers.
         },
         "client": {
             "name": "Dr. Mireya Caldus",
-            "title": "Professor of Behavioral Neurogenetics, Ardent University",
+            "title": "Professor of Behavioral Neuroscience, Ardent University",
             "short_description": "Needs a precise behavioral research model for compulsive hoarding.",
             "request_summary": "Create a precise research model for studying compulsive hoarding behavior without disrupting normal behavior.",
         },
         "client_letter": """
 From: Dr. Mireya Caldus
-Professor of Behavioral Neurogenetics, Ardent University
+Professor of Behavioral Neuroscience, Ardent University
 
-To the Emberforge Hatchery,
+To the Research Team,
 
 I am reaching out with a request that falls somewhat outside your usual scope.
 
@@ -602,7 +595,7 @@ The dragons I am studying display a form of compulsive hoarding. They will colle
 
 Despite this, the behavior is consistent and measurable, which makes it an ideal model for studying maladaptive reward processing.
 
-Through prior work, my team has narrowed this behavior to activity within the nucleus accumbens, specifically within a subset of reward-sensitive neurons.
+Through prior work, my team has narrowed this behavior to activity in the nucleus accumbens and to a subset of reward-sensitive neurons. Reward-sensitive neurons are not exclusive to the nucleus accumbens; related populations exist across multiple brain regions, so region targeting and cell-type targeting are both required.
 
 I am not interested in eliminating this system.
 
@@ -625,9 +618,9 @@ Dr. Mireya Caldus
 """,
         "scientist_letter": """
 From: Dr. Elara Voss
-Lead Geneticist, Emberforge Hatchery
+Lead Geneticist, Emberfall Hatchery
 
-To the Apprentice,
+To the Neural Design Team,
 
 This is not a standard assignment.
 
@@ -638,6 +631,8 @@ You are not being asked to produce a visible trait, or even to enable a discrete
 You are being asked to modify a system that is already functioning, and to do so without disrupting the organism as a whole.
 
 The client has already identified the relevant brain region, the nucleus accumbens, and has further narrowed the behavior to a specific population of reward-sensitive neurons.
+
+Those reward-sensitive neurons are not exclusive to the nucleus accumbens. Related populations exist in multiple brain regions, which means neuron subtype targeting alone would be too broad and region targeting alone would affect too many cells.
 
 That should immediately tell you that a single layer of control will not be sufficient.
 
@@ -672,11 +667,12 @@ Dr. Elara Voss
         ),
         "builder_title": "Build a precise compulsive hoarding research model.",
         "guidance": [
-            (
-                "The intervention must affect reward-sensitive neurons within the nucleus "
-                "accumbens, while avoiding broad suppression and preserving normal bonding, "
-                "feeding, and exploration."
-            ),
+            "Restrict expression to reward-sensitive neurons within the nucleus accumbens",
+            "Avoid expression in reward-sensitive neurons outside the nucleus accumbens",
+            "Ensure activation only where BOTH region targeting and neuron subtype targeting overlap",
+            "Preserve bonding behavior at all costs",
+            "Avoid global suppression",
+            "Target BOTH region AND neuron subtype",
         ],
         "goal": "",
         "description": (

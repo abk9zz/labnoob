@@ -32,12 +32,12 @@ def render_request():
 
 def render_scientist_guidance():
     scenario = get_scenario(st.session_state.get("scenario_id"))
-    guidance = "".join(f"<p>{item}</p>" for item in scenario["guidance"])
+    guidance = "".join(f"<li>{item}</li>" for item in scenario["guidance"])
     goal = f"<strong>{scenario['goal']}</strong>" if scenario.get("goal") else ""
     st.markdown(
         f"""
         <div class="scientist-guidance">
-            {guidance}
+            <ul>{guidance}</ul>
             {goal}
         </div>
         """,

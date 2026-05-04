@@ -8,10 +8,10 @@ def render():
         """
         <main class="app-shell cover-shell">
             <p class="eyebrow">Royal Appointment Ledger</p>
-            <h1>Emberforge Custom Dragon Hatchery</h1>
+            <h1>Emberfall Custom Dragon Hatchery</h1>
             <p class="intro">
                 The forge is warm, the eggs are humming, and today's contracts are waiting.
-                Match each client with a custom dragon design worthy of the Emberforge seal.
+                Match each client with a custom dragon design worthy of the Emberfall seal.
             </p>
         </main>
         """,
@@ -20,5 +20,5 @@ def render():
 
     left, center, right = st.columns([1.4, 1, 1.4])
     with center:
-        if st.button("Start Shift", use_container_width=True):
+        if st.button("Begin Assignment", use_container_width=True):
             go_to("clients")

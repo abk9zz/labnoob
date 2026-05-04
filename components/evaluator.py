@@ -9,7 +9,7 @@ CONSTRAINT_LABELS = {
     "temperature_control": "Add the Heat-Responsive Promoter for high-temperature activation.",
     "tet_system_present": "Add the Tet-On control system: rtTA and TetO.",
     "requires_both_conditions": "Integrate heat control with Tet-On activation so both signals are required.",
-    "avoids_constitutive_pyroxin": "Avoid constitutive CMV-driven Pyroxin-A6 expression.",
+    "avoids_constitutive_pyroxin": "Avoid Constitutive (CMV) promoter-driven Pyroxin-A6 expression.",
     "wing_specific_driver": "Use the wing-pattern promoter to drive GAL4 in wing pattern cells.",
     "gal4_driver_present": "Add GAL4 as the driver activator.",
     "uas_responder_present": "Add a UAS responder linked to a Lumina gene.",
@@ -32,11 +32,11 @@ CONSTRAINT_LABELS = {
     "stop_blocks_training_expression": "Place a STOP cassette upstream of Shadowmelanin.",
     "combined_logic_present": "Combine a locked night-active Shadowmelanin cassette with a separate Scale pigment promoter to Cre-ERT unlock construct.",
     "region_targeting_present": "Use the nucleus accumbens promoter to drive GAL4 in the target brain region.",
-    "reward_neuron_targeting_present": "Use the Reward-neuron promoter to drive Cre recombinase in the relevant cell population.",
+    "reward_neuron_targeting_present": "Use the Reward-neuron promoter to drive a recombinase in the relevant cell population.",
     "modulator_present": "Use Calm-Channel as the behavioral modulator.",
-    "intersectional_logic_present": "Combine GAL4/UAS control with a Cre-removable loxP-STOP-loxP lock upstream of Calm-Channel.",
+    "intersectional_logic_present": "Combine GAL4/UAS control with a recombinase-removable STOP lock upstream of Calm-Channel.",
     "bonding_exclusion_present": "Use the Bonding-neuron promoter to drive GAL80 in bonding-related neurons.",
-    "avoids_global_suppression": "Avoid CMV-driven neural control and use Calm-Channel instead of Neuro-Silencer.",
+    "avoids_global_suppression": "Avoid Constitutive (CMV) promoter-driven neural control and use Calm-Channel instead of Neuro-Silencer.",
 }
 
 PYROXIN_A6 = {
@@ -598,6 +598,17 @@ def has_reward_neuron_cre_driver(construct):
     )
 
 
+def has_reward_neuron_flp_driver(construct):
+    return any(
+        has_ordered_pair(cassette, "reward_neuron_promoter", "flp")
+        for cassette in normalize_constructs(construct)
+    )
+
+
+def has_reward_neuron_recombinase_driver(construct):
+    return has_reward_neuron_cre_driver(construct) or has_reward_neuron_flp_driver(construct)
+
+
 def has_calm_channel(construct):
     return has_gene(construct, CALM_CHANNEL)
 
@@ -609,7 +620,7 @@ def has_uas_calm_channel_responder(construct):
     )
 
 
-def has_locked_calm_channel_cassette(construct):
+def has_locked_calm_channel_cassette_with_site(construct, site_id):
     for cassette in calm_channel_cassettes(construct):
         ids = construct_ids(cassette)
         calm_index = first_index(ids, CALM_CHANNEL["id"])
@@ -619,27 +630,37 @@ def has_locked_calm_channel_cassette(construct):
         for uas_index in range(0, calm_index):
             if ids[uas_index] != "uas":
                 continue
-            for first_loxp in range(uas_index + 1, calm_index):
-                if ids[first_loxp] != "loxp":
+            for first_site in range(uas_index + 1, calm_index):
+                if ids[first_site] != site_id:
                     continue
-                for stop_index in range(first_loxp + 1, calm_index):
+                for stop_index in range(first_site + 1, calm_index):
                     if ids[stop_index] != "stop_cassette":
                         continue
-                    for second_loxp in range(stop_index + 1, calm_index):
-                        if ids[second_loxp] == "loxp":
+                    for second_site in range(stop_index + 1, calm_index):
+                        if ids[second_site] == site_id:
                             return True
     return False
 
 
-def has_separate_nacc_gal4_and_reward_cre_constructs(construct):
+def has_locked_calm_channel_cassette(construct):
+    return (
+        has_locked_calm_channel_cassette_with_site(construct, "loxp")
+        or has_locked_calm_channel_cassette_with_site(construct, "frt")
+    )
+
+
+def has_separate_nacc_gal4_and_reward_recombinase_constructs(construct):
     constructs = normalize_constructs(construct)
     for gal4_index, gal4_cassette in enumerate(constructs):
         if not has_ordered_pair(gal4_cassette, "nucleus_accumbens_promoter", "gal4"):
             continue
-        for cre_index, cre_cassette in enumerate(constructs):
-            if cre_index == gal4_index:
+        for recombinase_index, recombinase_cassette in enumerate(constructs):
+            if recombinase_index == gal4_index:
                 continue
-            if has_ordered_pair(cre_cassette, "reward_neuron_promoter", "cre"):
+            if (
+                has_ordered_pair(recombinase_cassette, "reward_neuron_promoter", "cre")
+                or has_ordered_pair(recombinase_cassette, "reward_neuron_promoter", "flp")
+            ):
                 return True
     return False
 
@@ -650,7 +671,7 @@ def has_compulsive_intersectional_logic(construct):
         "uas" in ids
         and has_uas_calm_channel_responder(construct)
         and has_locked_calm_channel_cassette(construct)
-        and has_separate_nacc_gal4_and_reward_cre_constructs(construct)
+        and has_separate_nacc_gal4_and_reward_recombinase_constructs(construct)
     )
 
 
@@ -666,7 +687,7 @@ def has_neuro_silencer(construct):
 
 
 def has_cmv_driven_behavioral_component(construct):
-    unsafe_targets = ("gal4", "cre", CALM_CHANNEL["id"], NEURO_SILENCER["id"])
+    unsafe_targets = ("gal4", "cre", "flp", CALM_CHANNEL["id"], NEURO_SILENCER["id"])
     return any(
         has_ordered_pair(cassette, "cmv", target)
         for cassette in normalize_constructs(construct)
@@ -713,7 +734,7 @@ CONSTRAINT_CHECKS = {
     "stop_blocks_training_expression": has_stop_before_shadowmelanin,
     "combined_logic_present": has_combined_nightfall_logic,
     "region_targeting_present": has_nucleus_accumbens_gal4_driver,
-    "reward_neuron_targeting_present": has_reward_neuron_cre_driver,
+    "reward_neuron_targeting_present": has_reward_neuron_recombinase_driver,
     "modulator_present": has_calm_channel,
     "intersectional_logic_present": has_compulsive_intersectional_logic,
     "bonding_exclusion_present": has_bonding_gal80_exclusion,
@@ -959,7 +980,7 @@ def build_forge_drake_feedback(outcome, constraints):
 
     if outcome == "partial success":
         if not constraints.get("avoids_constitutive_pyroxin"):
-            return "CMV-driven Pyroxin-A6 expression is unsafe because it can bypass the required control conditions."
+            return "Constitutive (CMV) promoter-driven Pyroxin-A6 expression is unsafe because it can bypass the required control conditions."
         if constraints.get("tet_system_present") and not constraints.get("temperature_control"):
             return "The handler-triggered inducible system is present, but forge heat is not required."
         if constraints.get("temperature_control") and not constraints.get("tet_system_present"):
@@ -969,7 +990,7 @@ def build_forge_drake_feedback(outcome, constraints):
         return "The Forge Drake design includes some required parts, but still lacks full dual-signal control."
 
     if not constraints.get("avoids_constitutive_pyroxin"):
-        return "CMV-driven Pyroxin-A6 expression is unsafe because it can bypass the required control conditions."
+        return "Constitutive (CMV) promoter-driven Pyroxin-A6 expression is unsafe because it can bypass the required control conditions."
     if constraints.get("temperature_control") and not constraints.get("tet_system_present"):
         return "Fire production is still triggered by heat alone, indicating insufficient control."
 
@@ -1033,15 +1054,15 @@ def build_compulsive_hoarding_feedback(outcome, constraints, construct):
     if has_neuro_silencer(construct):
         return "Neuro-Silencer is too strong for this behavioral study. The goal is modulation, not broad suppression."
 
-    if has_nucleus_accumbens_gal4_driver(construct) and has_uas_calm_channel_responder(construct) and not has_reward_neuron_cre_driver(construct):
+    if has_nucleus_accumbens_gal4_driver(construct) and has_uas_calm_channel_responder(construct) and not has_reward_neuron_recombinase_driver(construct):
         return "The intervention is restricted to the correct brain region, but it is not limited to the reward-sensitive neuron subtype."
 
-    if has_reward_neuron_cre_driver(construct) and has_locked_calm_channel_cassette(construct) and not has_nucleus_accumbens_gal4_driver(construct):
+    if has_reward_neuron_recombinase_driver(construct) and has_locked_calm_channel_cassette(construct) and not has_nucleus_accumbens_gal4_driver(construct):
         return "The reward-neuron condition is present, but there is no nucleus accumbens targeting. The intervention may affect reward-sensitive neurons outside the intended brain region."
 
     if (
         has_nucleus_accumbens_gal4_driver(construct)
-        and has_reward_neuron_cre_driver(construct)
+        and has_reward_neuron_recombinase_driver(construct)
         and has_locked_calm_channel_cassette(construct)
         and not has_bonding_gal80_exclusion(construct)
     ):
@@ -1052,21 +1073,21 @@ def build_compulsive_hoarding_feedback(outcome, constraints, construct):
 
     if has_bonding_gal80_exclusion(construct) and not (
         has_nucleus_accumbens_gal4_driver(construct)
-        or has_reward_neuron_cre_driver(construct)
+        or has_reward_neuron_recombinase_driver(construct)
         or has_uas_calm_channel_responder(construct)
     ):
         return "The exclusion system is present, but there is no targeted intervention to modify hoarding behavior."
 
     if outcome == "success":
-        return "The design layers nucleus accumbens GAL4, reward-neuron Cre, UAS-linked Calm-Channel, and bonding-neuron GAL80 to modulate the pathological circuit without broad behavioral suppression."
+        return "The design layers nucleus accumbens GAL4, reward-neuron recombinase targeting, UAS-linked Calm-Channel, and bonding-neuron GAL80 to modulate the pathological circuit without broad behavioral suppression."
 
     if constraints.get("modulator_present") and not constraints.get("intersectional_logic_present"):
-        return "Calm-Channel is present, but the design needs layered GAL4/UAS and Cre-lox logic to restrict modulation to the intended neural intersection."
+        return "Calm-Channel is present, but the design needs layered GAL4/UAS and matching recombinase STOP-gate logic to restrict modulation to the intended neural intersection."
 
     if constraints.get("intersectional_logic_present") and not constraints.get("bonding_exclusion_present"):
         return "The intersectional targeting logic is present, but bonding-related neurons still need GAL80 protection."
 
-    return "The compulsive hoarding model needs nucleus accumbens targeting, reward-neuron targeting, Calm-Channel modulation, loxP-STOP-loxP gating, and bonding-neuron exclusion."
+    return "The compulsive hoarding model needs nucleus accumbens targeting, reward-neuron targeting, Calm-Channel modulation, matching STOP-gate recombination, and bonding-neuron exclusion."
 
 
 def construct_ids(construct):

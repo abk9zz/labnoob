@@ -24,9 +24,21 @@ def get_css():
     }
 
     .block-container {
-        max-width: 1120px;
+        max-width: 100%;
         padding-top: 3.5rem;
         padding-bottom: 4rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    section[data-testid="stSidebar"],
+    div[data-testid="stSidebar"],
+    div[data-testid="collapsedControl"] {
+        display: none;
+    }
+
+    div[data-testid="stSidebarContent"] {
+        visibility: hidden;
     }
 
     .app-shell {
@@ -74,6 +86,7 @@ def get_css():
         line-height: 1.75;
         margin: 0 auto;
         max-width: 740px;
+        text-align: center;
     }
 
     .intro.small {
@@ -92,6 +105,10 @@ def get_css():
     }
 
     .contract-card {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
         min-height: 196px;
         padding: 1.25rem;
         text-align: left;
@@ -108,6 +125,10 @@ def get_css():
         margin: 0.6rem 0 0 0;
     }
 
+    .contract-card p:last-child {
+        flex: 1;
+    }
+
     .client-role {
         color: var(--ember) !important;
         font-size: 0.88rem;
@@ -116,7 +137,7 @@ def get_css():
 
     .detail-panel {
         padding: 1.4rem;
-        text-align: left;
+        text-align: center;
     }
 
     .detail-panel h1,
@@ -383,6 +404,17 @@ def get_css():
         margin: 0 0 0.45rem 0;
     }
 
+    .scientist-guidance ul {
+        color: var(--muted);
+        line-height: 1.65;
+        margin: 0;
+        padding-left: 1.3rem;
+    }
+
+    .scientist-guidance li {
+        margin: 0 0 0.35rem 0;
+    }
+
     .scientist-guidance strong {
         color: var(--ember-dark);
         display: block;
@@ -463,6 +495,8 @@ def get_css():
     @media (max-width: 760px) {
         .block-container {
             padding-top: 2rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
 
         h1 {
@@ -473,8 +507,7 @@ def get_css():
             padding-top: 1rem;
         }
 
-        .base-card,
-        .contract-card {
+        .base-card {
             min-height: auto;
         }
 
