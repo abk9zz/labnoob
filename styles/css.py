@@ -1,4 +1,21 @@
+import base64
+from pathlib import Path
+
+
+BACKGROUND_IMAGE_PATH = Path(__file__).resolve().parent.parent / "assets/images/Parchment_2.jpg"
+
+
+def get_background_image():
+    if not BACKGROUND_IMAGE_PATH.exists():
+        return ""
+
+    encoded = base64.b64encode(BACKGROUND_IMAGE_PATH.read_bytes()).decode("ascii")
+    return f"url('data:image/jpeg;base64,{encoded}')"
+
+
 def get_css():
+    background_image = get_background_image()
+
     return """
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap');
@@ -6,6 +23,7 @@ def get_css():
     :root {
         --ink: #2d2117;
         --muted: #624934;
+        --arcane: #5A2A83;
         --ember: #8d4428;
         --ember-dark: #67311f;
         --gold: #c99445;
@@ -18,9 +36,40 @@ def get_css():
         background:
             radial-gradient(circle at 8% 4%, rgba(197, 107, 53, 0.20), transparent 24rem),
             radial-gradient(circle at 90% 18%, rgba(69, 123, 108, 0.16), transparent 22rem),
-            linear-gradient(135deg, #faefd6 0%, #ead4aa 48%, #d2ad70 100%);
+            linear-gradient(135deg, #ead7aa 0%, #d5b579 48%, #b98543 100%);
         color: var(--ink);
-        font-family: "Inter", sans-serif;
+        font-family: "Times New Roman", Times, serif;
+    }
+
+    [data-testid="stAppViewContainer"] {
+        background-image:
+            radial-gradient(circle at 8% 4%, rgba(197, 107, 53, 0.20), transparent 24rem),
+            radial-gradient(circle at 90% 18%, rgba(69, 123, 108, 0.16), transparent 22rem),
+            linear-gradient(135deg, #ead7aa 0%, #d5b579 48%, #b98543 100%);
+        background-size: cover;
+        background-position: center;
+    }
+
+    [data-testid="stAppViewContainer"]::before {
+        background-image: __BACKGROUND_IMAGE__;
+        background-position: center;
+        background-size: cover;
+        content: "";
+        inset: 0;
+        opacity: 0.85;
+        pointer-events: none;
+        position: fixed;
+    }
+
+    body,
+    p,
+    .stApp,
+    button,
+    label,
+    input,
+    textarea,
+    select {
+        font-family: "Times New Roman", Times, serif;
     }
 
     .block-container {
@@ -84,10 +133,24 @@ def get_css():
     h1,
     h2,
     h3,
+    h4,
+    h5,
+    h6,
+    .app-shell h1,
+    .app-shell h2,
+    .app-shell h3,
+    [data-testid="stMarkdownContainer"] h1,
+    [data-testid="stMarkdownContainer"] h2,
+    [data-testid="stMarkdownContainer"] h3,
+    .eyebrow,
+    .section-heading {
+        color: var(--ink);
+        font-family: "Cinzel", serif !important;
+        letter-spacing: 0;
+    }
+
     h4 {
         color: var(--ink);
-        font-family: "Cinzel", serif;
-        letter-spacing: 0;
     }
 
     h1 {
@@ -108,6 +171,10 @@ def get_css():
         margin: 0 auto;
         max-width: 740px;
         text-align: center;
+    }
+
+    .cover-shell .intro {
+        font-size: 1.46rem;
     }
 
     .intro.small {
@@ -133,6 +200,7 @@ def get_css():
 
     .contract-card {
         align-items: flex-start;
+        background: rgba(253, 242, 217, 0.96);
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
@@ -173,6 +241,14 @@ def get_css():
         text-align: center;
     }
 
+    .app-shell.detail-panel h1 {
+        font-size: 2.25rem;
+    }
+
+    .app-shell.detail-panel h2 {
+        font-size: 0.94rem;
+    }
+
     .requirements {
         background: rgba(255, 255, 255, 0.34);
         border: 1px solid rgba(98, 73, 52, 0.14);
@@ -207,6 +283,11 @@ def get_css():
         text-align: left;
     }
 
+    .letter-paper,
+    .letter-paper p {
+        font-family: "Libre Baskerville", Georgia, serif !important;
+    }
+
     .letter-paper p {
         margin: 0 0 1.05rem 0;
     }
@@ -231,6 +312,16 @@ def get_css():
         max-width: 620px;
     }
 
+    .st-key-builder_window,
+    div[class*="st-key-builder_window"] {
+        background: rgba(255, 246, 223, 0.5);
+        border: 1px solid rgba(98, 73, 52, 0.18);
+        border-radius: 8px;
+        box-shadow: 0 12px 28px rgba(61, 35, 16, 0.12);
+        margin: 1.5rem auto;
+        padding: 1.35rem;
+    }
+
     .species-card {
         min-height: 0;
         padding: 1.35rem;
@@ -249,6 +340,29 @@ def get_css():
     .base-card h4 {
         font-size: 1.08rem;
         margin: 0.75rem 0 0.5rem 0;
+    }
+
+    .builder-text,
+    .base-card,
+    .base-card h4,
+    .base-card p,
+    .base-card span,
+    .construct-preview,
+    .construct-preview strong,
+    .construct-token,
+    .construct-arrow,
+    .construct-row,
+    .construct-row strong,
+    .construct-row span,
+    div[data-testid="stRadio"],
+    div[data-testid="stRadio"] *,
+    div[data-testid="stSelectbox"],
+    div[data-testid="stSelectbox"] *,
+    div[data-testid="stCaptionContainer"],
+    div[data-testid="stCaptionContainer"] *,
+    div[data-testid="stAlert"],
+    div[data-testid="stAlert"] * {
+        font-family: "Times New Roman", Times, serif !important;
     }
 
     .base-card p,
@@ -274,10 +388,10 @@ def get_css():
     }
 
     .species-pill {
-        background: rgba(69, 123, 108, 0.12);
-        border: 1px solid rgba(69, 123, 108, 0.24);
+        background: rgba(90, 42, 131, 0.12);
+        border: 1px solid rgba(90, 42, 131, 0.24);
         border-radius: 999px;
-        color: #315b51;
+        color: var(--arcane);
         display: inline-block;
         font-size: 0.9rem;
         font-weight: 800;
@@ -315,10 +429,10 @@ def get_css():
     }
 
     .trial-badge {
-        background: rgba(69, 123, 108, 0.12);
-        border: 1px solid rgba(69, 123, 108, 0.22);
+        background: rgba(90, 42, 131, 0.12);
+        border: 1px solid rgba(90, 42, 131, 0.24);
         border-radius: 999px;
-        color: #315b51;
+        color: var(--arcane);
         display: inline-block;
         align-self: flex-start;
         font-size: 0.72rem;
@@ -436,12 +550,14 @@ def get_css():
 
     .scientist-guidance ul {
         color: var(--muted);
+        font-family: "Times New Roman", Times, serif !important;
         line-height: 1.65;
         margin: 0;
         padding-left: 1.3rem;
     }
 
     .scientist-guidance li {
+        font-family: "Times New Roman", Times, serif !important;
         margin: 0 0 0.35rem 0;
     }
 
@@ -493,6 +609,7 @@ def get_css():
         border: 1px solid var(--ember-dark);
         border-radius: 8px;
         color: #fff8e8;
+        font-family: "Times New Roman", Times, serif;
         font-weight: 800;
         min-height: 2.85rem;
         transition: all 0.15s ease;
@@ -509,6 +626,28 @@ def get_css():
     .stButton > button:focus,
     .stButton > button:active {
         color: #fff8e8;
+    }
+
+    div[data-testid="stAlert"] {
+        background: rgba(90, 42, 131, 0.1);
+        border-color: rgba(90, 42, 131, 0.24);
+        color: var(--arcane);
+    }
+
+    div[data-testid="stAlert"] *,
+    div[data-testid="stAlert"] p {
+        color: var(--arcane) !important;
+    }
+
+    div[data-testid="stRadio"] input[type="radio"] {
+        accent-color: var(--arcane);
+    }
+
+    div[data-testid="stRadio"] label:has(input[type="radio"]:checked),
+    div[data-testid="stRadio"] label:has(input[type="radio"]:checked) *,
+    div[data-testid="stRadio"] [aria-checked="true"],
+    div[data-testid="stRadio"] [aria-checked="true"] * {
+        color: var(--arcane) !important;
     }
 
     div[data-testid="stExpander"] {
@@ -547,4 +686,4 @@ def get_css():
         }
     }
     </style>
-    """
+    """.replace("__BACKGROUND_IMAGE__", background_image)

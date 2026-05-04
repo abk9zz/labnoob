@@ -515,7 +515,7 @@ def move_component(index, direction):
 
 
 def render_component_picker():
-    st.markdown("<h3 class='section-heading'>Build Construct</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 class='section-heading builder-text'>Build Construct</h3>", unsafe_allow_html=True)
     st.info(
         "Many genetic systems require multiple expression cassettes. Use separate constructs when different proteins need to be expressed independently."
     )
@@ -570,7 +570,7 @@ def render_construct_selector():
 
 
 def render_construct_visual():
-    st.markdown("<h3 class='section-heading'>Construct Sequences</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 class='section-heading builder-text'>Construct Sequences</h3>", unsafe_allow_html=True)
     render_construct_selector()
     construct = current_construct()
 
@@ -619,7 +619,7 @@ def render_construct_visual():
 
 
 def render_all_constructs():
-    st.markdown("<h4>Full Design</h4>", unsafe_allow_html=True)
+    st.markdown("<h4 class='builder-text'>Full Design</h4>", unsafe_allow_html=True)
     arrow = ' <span class="construct-arrow">&rarr;</span> '
 
     for construct_index, construct in enumerate(st.session_state.constructs):

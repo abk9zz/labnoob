@@ -76,7 +76,7 @@ Be mindful of this distinction as you design your system.
             "Avoid expression in bloodstream and non-combustion tissues",
             "Preserve fire production",
         ],
-        "goal": "Design a system that localizes Pyroxin-A6 expression to the laryngeal glands.",
+        "goal": "",
         "description": (
             "Introductory Frost Titan assignment focused on spacial control of Pyroxin-A6 "
         ),

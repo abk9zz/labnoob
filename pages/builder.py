@@ -110,9 +110,8 @@ def render():
     if st.session_state.show_component_library:
         render_library()
 
-    st.divider()
-    run_builder()
-    st.divider()
+    with st.container(key="builder_window"):
+        run_builder()
     render_submission()
     render_results()
 

@@ -10,8 +10,8 @@ def render():
             <p class="eyebrow">Royal Appointment Ledger</p>
             <h1>Emberfall Custom Dragon Hatchery</h1>
             <p class="intro centered-subtitle">
-                The forge is warm, the eggs are humming, and today's contracts are waiting.
-                Match each client with a custom dragon design worthy of the Emberfall seal.
+                The nests are warm, the eggs are humming, and today’s contracts are waiting.
+                As an apprentice of Emberfall, your task is to match each client with a custom dragon design worthy of the Emberfall seal.
             </p>
         </main>
         """,

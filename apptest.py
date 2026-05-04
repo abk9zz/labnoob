@@ -1,5 +1,6 @@
 import streamlit as st
 
+from components.navigation import scroll_to_top_if_needed
 from components.scenarios import DEFAULT_SCENARIO_ID
 from pages import builder, client_detail, clients, cover, scientist_notes
 from styles.css import get_css
@@ -42,6 +43,7 @@ def main():
     )
     st.markdown(get_css(), unsafe_allow_html=True)
     initialize_state()
+    scroll_to_top_if_needed()
     route_page()
 
 
