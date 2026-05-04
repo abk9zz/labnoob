@@ -6,11 +6,11 @@ CONSTRAINT_LABELS = {
     "gene_present": "Add Pyroxin-A6 so combustion and heat generation are preserved.",
     "valid_construct_order": "Place the promoter before Pyroxin-A6 in the construct.",
     "has_pyroxin": "Add Pyroxin-A6 as the controlled fire effector.",
-    "temperature_control": "Add the Heat-Responsive Promoter for high-temperature activation.",
+    "temperature_control": "Add the Heat-responsive promoter for high-temperature activation.",
     "tet_system_present": "Add the Tet-On control system: rtTA and TetO.",
     "requires_both_conditions": "Integrate heat control with Tet-On activation so both signals are required.",
-    "avoids_constitutive_pyroxin": "Avoid Constitutive (CMV) promoter-driven Pyroxin-A6 expression.",
-    "wing_specific_driver": "Use the wing-pattern promoter to drive GAL4 in wing pattern cells.",
+    "avoids_constitutive_pyroxin": "Avoid Constitutive promoter-driven Pyroxin-A6 expression.",
+    "wing_specific_driver": "Use the Wing pattern promoter to drive GAL4 in wing pattern cells.",
     "gal4_driver_present": "Add GAL4 as the driver activator.",
     "uas_responder_present": "Add a UAS responder linked to a Lumina gene.",
     "blue_output_present": "Add Lumina-Blue for the requested blue glow.",
@@ -18,25 +18,25 @@ CONSTRAINT_LABELS = {
     "glandular_driver_present": "Use the glandular promoter to drive GAL4 in secretory tissue.",
     "gal4_uas_system_present": "Add GAL4 and a UAS responder linked to Aureolin.",
     "aureolin_present": "Add Aureolin as the healing mist effector.",
-    "airway_repression_present": "Use the airway promoter to drive GAL80 in lung and airway-associated cells.",
+    "airway_repression_present": "Use the airway promoter to drive GAL80 in respiratory epithelial cells.",
     "subtractive_specificity": "Preserve mist gland expression while excluding airway tissue with GAL80 repression.",
-    "venom_gene_present": "Add Venom-X as the defensive output token.",
-    "venom_gland_expression": "Use the Venom gland promoter with Venom-X.",
-    "stop_blocks_juvenile_expression": "Place the STOP cassette before Venom-X in the same construct.",
+    "venom_gene_present": "Add Virexin as the defensive output token.",
+    "venom_gland_expression": "Use the Venom gland promoter with Virexin.",
+    "stop_blocks_juvenile_expression": "Place the STOP cassette before Virexin in the same construct.",
     "loxp_sites_present": "Use two loxP site tokens around the safety lock.",
     "cre_maturity_trigger_present": "Use the Molting-stage promoter with Cre in a separate construct.",
     "permanent_unlock_logic": "Combine the locked defensive cassette with a separate maturity-triggered unlock construct.",
-    "shadowmelanin_present": "Add Shadowmelanin as the night camouflage effector.",
-    "circadian_control_present": "Place Shadowmelanin in a cassette with the Night-active promoter.",
+    "nyxmelanin_present": "Add Nyxmelanin as the night camouflage effector.",
+    "circadian_control_present": "Place Nyxmelanin in a cassette with the Night-active promoter.",
     "approval_unlock_present": "Use Scale pigment promoter to drive Cre-ERT for handler-approved unlocking.",
-    "stop_blocks_training_expression": "Place a STOP cassette upstream of Shadowmelanin.",
-    "combined_logic_present": "Combine a locked night-active Shadowmelanin cassette with a separate Scale pigment promoter to Cre-ERT unlock construct.",
+    "stop_blocks_training_expression": "Place a STOP cassette upstream of Nyxmelanin.",
+    "combined_logic_present": "Combine a locked night-active Nyxmelanin cassette with a separate Scale pigment promoter to Cre-ERT unlock construct.",
     "region_targeting_present": "Use the nucleus accumbens promoter to drive GAL4 in the target brain region.",
     "reward_neuron_targeting_present": "Use the Reward-neuron promoter to drive a recombinase in the relevant cell population.",
-    "modulator_present": "Use Calm-Channel as the behavioral modulator.",
-    "intersectional_logic_present": "Combine GAL4/UAS control with a recombinase-removable STOP lock upstream of Calm-Channel.",
-    "bonding_exclusion_present": "Use the Bonding-neuron promoter to drive GAL80 in bonding-related neurons.",
-    "avoids_global_suppression": "Avoid Constitutive (CMV) promoter-driven neural control and use Calm-Channel instead of Neuro-Silencer.",
+    "modulator_present": "Use GIRK channel as the behavioral modulator.",
+    "intersectional_logic_present": "Combine GAL4/UAS control with a recombinase-removable STOP lock upstream of GIRK channel.",
+    "bonding_exclusion_present": "Use the Oxytocin-neuron promoter to drive GAL80 in oxytocin-producing bonding neurons.",
+    "avoids_global_suppression": "Avoid Constitutive promoter-driven neural control and use GIRK channel instead of GABA-Amplifier.",
 }
 
 PYROXIN_A6 = {
@@ -57,28 +57,28 @@ AUREOLIN = {
     "terms": ("aureolin", "aur"),
 }
 
-VENOM_X = {
-    "id": "venom_x",
-    "name": "Venom-X",
-    "terms": ("venom_x", "venom-x", "venom x", "ven-x"),
+VIREXIN = {
+    "id": "virexin",
+    "name": "Virexin",
+    "terms": ("virexin",),
 }
 
-SHADOWMELANIN = {
-    "id": "shadowmelanin",
-    "name": "Shadowmelanin",
-    "terms": ("shadowmelanin", "shadow melanin", "shd-mel", "shd_mel"),
+NYXMELANIN = {
+    "id": "nyxmelanin",
+    "name": "Nyxmelanin",
+    "terms": ("nyxmelanin",),
 }
 
-CALM_CHANNEL = {
-    "id": "calm_channel",
-    "name": "Calm-Channel",
-    "terms": ("calm_channel", "calm-channel", "calm channel", "calm-ch"),
+GIRK_CHANNEL = {
+    "id": "girk_channel",
+    "name": "GIRK channel",
+    "terms": ("girk_channel", "girk-channel", "girk channel", "girk"),
 }
 
-NEURO_SILENCER = {
-    "id": "neuro_silencer",
-    "name": "Neuro-Silencer",
-    "terms": ("neuro_silencer", "neuro-silencer", "neuro silencer", "neu-sil"),
+GABA_AMPLIFIER = {
+    "id": "gaba_amplifier",
+    "name": "GABA-Amplifier",
+    "terms": ("gaba_amplifier", "gaba-amplifier", "gaba amplifier", "gaba-amp"),
 }
 
 TARGET_TERMS = {
@@ -86,7 +86,6 @@ TARGET_TERMS = {
 }
 
 SYSTEMIC_TERMS = (
-    "cmv",
     "constitutive",
     "systemic",
     "bloodstream",
@@ -113,8 +112,8 @@ CONTROL_TERMS = (
     "trigger",
 )
 
-TERMINATOR_BLOCKS_EFFECTOR_FEEDBACK = (
-    "A terminator appears before the effector gene, so transcription would stop "
+POLYA_BLOCKS_EFFECTOR_FEEDBACK = (
+    "A PolyA terminator appears before the effector gene, so transcription would stop "
     "before the protein is produced."
 )
 
@@ -129,9 +128,9 @@ SCENARIO_EFFECTORS = {
     ),
     "Medicinal Mist Dragon": (AUREOLIN,),
     "Forge Drake Control System": (PYROXIN_A6,),
-    "Royal Guardian Dragon": (VENOM_X,),
-    "Nightfall Certification Dragon": (SHADOWMELANIN,),
-    "Compulsive Hoarding Research Model": (CALM_CHANNEL, NEURO_SILENCER),
+    "Royal Guardian Dragon": (VIREXIN,),
+    "Nightfall Certification Dragon": (NYXMELANIN,),
+    "Compulsive Hoarding Research Model": (GIRK_CHANNEL, GABA_AMPLIFIER),
 }
 
 
@@ -147,7 +146,7 @@ def evaluate_construct(constructs, species="Frost Titan", scenario=None):
     if is_bioluminescent_scenario(active_scenario) and has_direct_wing_blue_expression(constructs):
         score = max(score, 60)
 
-    blocked_construct = terminator_blocks_effector(
+    blocked_construct = polya_terminator_blocks_effector(
         constructs,
         main_effectors_for_scenario(active_scenario),
     )
@@ -168,11 +167,11 @@ def evaluate_construct(constructs, species="Frost Titan", scenario=None):
         if not constraints[constraint]
     ]
     if has_blocked_effector:
-        issues.append(terminator_feedback(blocked_construct))
+        issues.append(polya_terminator_feedback(blocked_construct))
 
     feedback = build_feedback(outcome, constraints, species, active_scenario, constructs)
     if has_blocked_effector:
-        feedback = terminator_feedback(blocked_construct)
+        feedback = polya_terminator_feedback(blocked_construct)
 
     return {
         "score": score,
@@ -198,7 +197,7 @@ def main_effectors_for_scenario(scenario):
     return SCENARIO_EFFECTORS.get(scenario.get("name"), (PYROXIN_A6,))
 
 
-def terminator_blocks_effector(constructs, effector_names):
+def polya_terminator_blocks_effector(constructs, effector_names):
     for construct_index, construct in enumerate(normalize_constructs(constructs)):
         ids = construct_ids(construct)
         for effector in effector_names:
@@ -207,15 +206,15 @@ def terminator_blocks_effector(constructs, effector_names):
                 continue
 
             upstream_ids = ids[:effector_index]
-            if "terminator" in upstream_ids:
+            if "polya_terminator" in upstream_ids:
                 return construct_index
 
     return None
 
 
-def terminator_feedback(construct_index):
+def polya_terminator_feedback(construct_index):
     return (
-        f"A terminator appears before the expressed gene in Construct {construct_index + 1}, "
+        f"A PolyA terminator appears before the expressed gene in Construct {construct_index + 1}, "
         "so transcription would stop before the protein is produced."
     )
 
@@ -299,7 +298,7 @@ def avoids_constitutive_pyroxin(construct):
             for part in cassette[:pyroxin_index]
             if part.get("type") == "Promoters" or "promoter" in str(part.get("id", "")).lower()
         ]
-        if upstream_promoters and upstream_promoters[-1] == "cmv":
+        if upstream_promoters and upstream_promoters[-1] == "constitutive_promoter":
             return False
     return True
 
@@ -374,20 +373,20 @@ def has_subtractive_specificity(construct):
 
 
 def has_venom_gene(construct):
-    return has_gene(construct, VENOM_X)
+    return has_gene(construct, VIREXIN)
 
 
 def venom_cassettes(construct):
     return [
         cassette
         for cassette in normalize_constructs(construct)
-        if first_index(construct_ids(cassette), VENOM_X["id"]) is not None
+        if first_index(construct_ids(cassette), VIREXIN["id"]) is not None
     ]
 
 
 def has_venom_gland_expression(construct):
     return any(
-        has_ordered_pair(cassette, "venom_gland_promoter", VENOM_X["id"])
+        has_ordered_pair(cassette, "venom_gland_promoter", VIREXIN["id"])
         for cassette in venom_cassettes(construct)
     )
 
@@ -396,7 +395,7 @@ def has_stop_before_venom(construct):
     for cassette in venom_cassettes(construct):
         ids = construct_ids(cassette)
         stop_index = first_index(ids, "stop_cassette")
-        venom_index = first_index(ids, VENOM_X["id"])
+        venom_index = first_index(ids, VIREXIN["id"])
         if stop_index is not None and venom_index is not None and stop_index < venom_index:
             return True
     return False
@@ -412,14 +411,14 @@ def has_two_loxp_sites_in_venom_cassette(construct):
 def has_two_loxp_sites_in_locked_effector_cassette(construct):
     return (
         has_two_loxp_sites_in_venom_cassette(construct)
-        or has_two_loxp_sites_in_shadowmelanin_cassette(construct)
+        or has_two_loxp_sites_in_nyxmelanin_cassette(construct)
     )
 
 
 def has_locked_venom_cassette(construct):
     for cassette in venom_cassettes(construct):
         ids = construct_ids(cassette)
-        venom_index = first_index(ids, VENOM_X["id"])
+        venom_index = first_index(ids, VIREXIN["id"])
         if venom_index is None:
             continue
 
@@ -450,7 +449,7 @@ def has_separate_maturity_cre_construct(construct):
         for venom_index, venom_cassette in enumerate(constructs):
             if venom_index == cre_index:
                 continue
-            if first_index(construct_ids(venom_cassette), VENOM_X["id"]) is not None:
+            if first_index(construct_ids(venom_cassette), VIREXIN["id"]) is not None:
                 return True
     return False
 
@@ -461,7 +460,7 @@ def has_permanent_unlock_logic(construct):
 
 def has_broad_cre_unlock(construct):
     return any(
-        has_ordered_pair(cassette, "cmv", "cre")
+        has_ordered_pair(cassette, "constitutive_promoter", "cre")
         for cassette in normalize_constructs(construct)
     )
 
@@ -469,33 +468,33 @@ def has_broad_cre_unlock(construct):
 def has_direct_venom_expression(construct):
     for cassette in venom_cassettes(construct):
         ids = construct_ids(cassette)
-        venom_index = first_index(ids, VENOM_X["id"])
+        venom_index = first_index(ids, VIREXIN["id"])
         if venom_index is None:
             continue
         if (
-            has_ordered_pair(cassette, "venom_gland_promoter", VENOM_X["id"])
+            has_ordered_pair(cassette, "venom_gland_promoter", VIREXIN["id"])
             and "stop_cassette" not in ids[:venom_index]
         ):
             return True
     return False
 
 
-def shadowmelanin_cassettes(construct):
+def nyxmelanin_cassettes(construct):
     return [
         cassette
         for cassette in normalize_constructs(construct)
-        if first_index(construct_ids(cassette), SHADOWMELANIN["id"]) is not None
+        if first_index(construct_ids(cassette), NYXMELANIN["id"]) is not None
     ]
 
 
-def has_shadowmelanin(construct):
-    return has_gene(construct, SHADOWMELANIN)
+def has_nyxmelanin(construct):
+    return has_gene(construct, NYXMELANIN)
 
 
-def has_night_active_shadowmelanin_cassette(construct):
+def has_night_active_nyxmelanin_cassette(construct):
     return any(
         "night_active_promoter" in construct_ids(cassette)
-        for cassette in shadowmelanin_cassettes(construct)
+        for cassette in nyxmelanin_cassettes(construct)
     )
 
 
@@ -506,29 +505,29 @@ def has_scale_cre_ert_construct(construct):
     )
 
 
-def has_stop_before_shadowmelanin(construct):
-    for cassette in shadowmelanin_cassettes(construct):
+def has_stop_before_nyxmelanin(construct):
+    for cassette in nyxmelanin_cassettes(construct):
         ids = construct_ids(cassette)
         stop_index = first_index(ids, "stop_cassette")
-        shadowmelanin_index = first_index(ids, SHADOWMELANIN["id"])
+        nyxmelanin_index = first_index(ids, NYXMELANIN["id"])
         if (
             stop_index is not None
-            and shadowmelanin_index is not None
-            and stop_index < shadowmelanin_index
+            and nyxmelanin_index is not None
+            and stop_index < nyxmelanin_index
         ):
             return True
     return False
 
 
-def has_two_loxp_sites_in_shadowmelanin_cassette(construct):
+def has_two_loxp_sites_in_nyxmelanin_cassette(construct):
     return any(
         construct_ids(cassette).count("loxp") >= 2
-        for cassette in shadowmelanin_cassettes(construct)
+        for cassette in nyxmelanin_cassettes(construct)
     )
 
 
 def has_locked_nightfall_cassette(construct):
-    for cassette in shadowmelanin_cassettes(construct):
+    for cassette in nyxmelanin_cassettes(construct):
         ids = construct_ids(cassette)
         if has_ordered_sequence(
             ids,
@@ -537,7 +536,7 @@ def has_locked_nightfall_cassette(construct):
                 "loxp",
                 "stop_cassette",
                 "loxp",
-                SHADOWMELANIN["id"],
+                NYXMELANIN["id"],
             ],
         ):
             return True
@@ -557,30 +556,30 @@ def has_combined_nightfall_logic(construct):
     return False
 
 
-def has_direct_night_shadowmelanin_expression(construct):
-    for cassette in shadowmelanin_cassettes(construct):
+def has_direct_night_nyxmelanin_expression(construct):
+    for cassette in nyxmelanin_cassettes(construct):
         ids = construct_ids(cassette)
-        shadowmelanin_index = first_index(ids, SHADOWMELANIN["id"])
+        nyxmelanin_index = first_index(ids, NYXMELANIN["id"])
         night_index = first_index(ids, "night_active_promoter")
-        if night_index is None or shadowmelanin_index is None or night_index > shadowmelanin_index:
+        if night_index is None or nyxmelanin_index is None or night_index > nyxmelanin_index:
             continue
-        if "stop_cassette" not in ids[:shadowmelanin_index]:
+        if "stop_cassette" not in ids[:nyxmelanin_index]:
             return True
     return False
 
 
-def has_constitutive_shadowmelanin_expression(construct):
+def has_constitutive_nyxmelanin_expression(construct):
     return any(
-        has_ordered_pair(cassette, "cmv", SHADOWMELANIN["id"])
-        for cassette in shadowmelanin_cassettes(construct)
+        has_ordered_pair(cassette, "constitutive_promoter", NYXMELANIN["id"])
+        for cassette in nyxmelanin_cassettes(construct)
     )
 
 
-def calm_channel_cassettes(construct):
+def girk_channel_cassettes(construct):
     return [
         cassette
         for cassette in normalize_constructs(construct)
-        if first_index(construct_ids(cassette), CALM_CHANNEL["id"]) is not None
+        if first_index(construct_ids(cassette), GIRK_CHANNEL["id"]) is not None
     ]
 
 
@@ -609,21 +608,21 @@ def has_reward_neuron_recombinase_driver(construct):
     return has_reward_neuron_cre_driver(construct) or has_reward_neuron_flp_driver(construct)
 
 
-def has_calm_channel(construct):
-    return has_gene(construct, CALM_CHANNEL)
+def has_girk_channel(construct):
+    return has_gene(construct, GIRK_CHANNEL)
 
 
-def has_uas_calm_channel_responder(construct):
+def has_uas_girk_channel_responder(construct):
     return any(
-        has_ordered_pair(cassette, "uas", CALM_CHANNEL["id"])
-        for cassette in calm_channel_cassettes(construct)
+        has_ordered_pair(cassette, "uas", GIRK_CHANNEL["id"])
+        for cassette in girk_channel_cassettes(construct)
     )
 
 
-def has_locked_calm_channel_cassette_with_site(construct, site_id):
-    for cassette in calm_channel_cassettes(construct):
+def has_locked_girk_channel_cassette_with_site(construct, site_id):
+    for cassette in girk_channel_cassettes(construct):
         ids = construct_ids(cassette)
-        calm_index = first_index(ids, CALM_CHANNEL["id"])
+        calm_index = first_index(ids, GIRK_CHANNEL["id"])
         if calm_index is None:
             continue
 
@@ -642,10 +641,10 @@ def has_locked_calm_channel_cassette_with_site(construct, site_id):
     return False
 
 
-def has_locked_calm_channel_cassette(construct):
+def has_locked_girk_channel_cassette(construct):
     return (
-        has_locked_calm_channel_cassette_with_site(construct, "loxp")
-        or has_locked_calm_channel_cassette_with_site(construct, "frt")
+        has_locked_girk_channel_cassette_with_site(construct, "loxp")
+        or has_locked_girk_channel_cassette_with_site(construct, "frt")
     )
 
 
@@ -669,27 +668,27 @@ def has_compulsive_intersectional_logic(construct):
     ids = all_construct_ids(construct)
     return (
         "uas" in ids
-        and has_uas_calm_channel_responder(construct)
-        and has_locked_calm_channel_cassette(construct)
+        and has_uas_girk_channel_responder(construct)
+        and has_locked_girk_channel_cassette(construct)
         and has_separate_nacc_gal4_and_reward_recombinase_constructs(construct)
     )
 
 
 def has_bonding_gal80_exclusion(construct):
     return any(
-        has_ordered_pair(cassette, "bonding_neuron_promoter", "gal80")
+        has_ordered_pair(cassette, "oxytocin_neuron_promoter", "gal80")
         for cassette in normalize_constructs(construct)
     )
 
 
-def has_neuro_silencer(construct):
-    return has_gene(construct, NEURO_SILENCER)
+def has_gaba_amplifier(construct):
+    return has_gene(construct, GABA_AMPLIFIER)
 
 
-def has_cmv_driven_behavioral_component(construct):
-    unsafe_targets = ("gal4", "cre", "flp", CALM_CHANNEL["id"], NEURO_SILENCER["id"])
+def has_constitutive_promoter_driven_behavioral_component(construct):
+    unsafe_targets = ("gal4", "cre", "flp", GIRK_CHANNEL["id"], GABA_AMPLIFIER["id"])
     return any(
-        has_ordered_pair(cassette, "cmv", target)
+        has_ordered_pair(cassette, "constitutive_promoter", target)
         for cassette in normalize_constructs(construct)
         for target in unsafe_targets
     )
@@ -697,9 +696,9 @@ def has_cmv_driven_behavioral_component(construct):
 
 def avoids_global_behavioral_suppression(construct):
     return (
-        has_calm_channel(construct)
-        and not has_neuro_silencer(construct)
-        and not has_cmv_driven_behavioral_component(construct)
+        has_girk_channel(construct)
+        and not has_gaba_amplifier(construct)
+        and not has_constitutive_promoter_driven_behavioral_component(construct)
     )
 
 
@@ -728,14 +727,14 @@ CONSTRAINT_CHECKS = {
     "loxp_sites_present": has_two_loxp_sites_in_locked_effector_cassette,
     "cre_maturity_trigger_present": has_separate_maturity_cre_construct,
     "permanent_unlock_logic": has_permanent_unlock_logic,
-    "shadowmelanin_present": has_shadowmelanin,
-    "circadian_control_present": has_night_active_shadowmelanin_cassette,
+    "nyxmelanin_present": has_nyxmelanin,
+    "circadian_control_present": has_night_active_nyxmelanin_cassette,
     "approval_unlock_present": has_scale_cre_ert_construct,
-    "stop_blocks_training_expression": has_stop_before_shadowmelanin,
+    "stop_blocks_training_expression": has_stop_before_nyxmelanin,
     "combined_logic_present": has_combined_nightfall_logic,
     "region_targeting_present": has_nucleus_accumbens_gal4_driver,
     "reward_neuron_targeting_present": has_reward_neuron_recombinase_driver,
-    "modulator_present": has_calm_channel,
+    "modulator_present": has_girk_channel,
     "intersectional_logic_present": has_compulsive_intersectional_logic,
     "bonding_exclusion_present": has_bonding_gal80_exclusion,
     "avoids_global_suppression": avoids_global_behavioral_suppression,
@@ -828,7 +827,7 @@ def has_direct_wing_blue_expression(construct):
 
 def has_broad_gal4_driver(construct):
     return any(
-        has_ordered_pair(cassette, "cmv", "gal4")
+        has_ordered_pair(cassette, "constitutive_promoter", "gal4")
         for cassette in normalize_constructs(construct)
     )
 
@@ -867,8 +866,8 @@ def has_control_mechanism(construct):
 
     has_cre_switch = "cre" in ids and "stop_cassette" in ids and ids.count("loxp") >= 2
     has_gal4_switch = "gal4" in ids and "uas" in ids and ("gal80" in ids or has_targeted_expression(construct))
-    has_inducible_signal = contains_any(terms, CONTROL_TERMS) or "heat_shock_promoter" in ids
-    has_termination = "terminator" in ids
+    has_inducible_signal = contains_any(terms, CONTROL_TERMS) or "heat_responsive_promoter" in ids
+    has_termination = "polya_terminator" in ids
 
     return has_cre_switch or has_gal4_switch or has_inducible_signal or (
         has_targeted_expression(construct) and has_termination
@@ -950,7 +949,7 @@ def build_gal80_repression_feedback(outcome, constraints, construct):
     if outcome == "success":
         return "The design uses glandular GAL4 to activate UAS-linked Aureolin while airway GAL80 blocks expression in respiratory tissue."
 
-    if has_glandular_gal4_driver(construct) and has_uas_aureolin_responder(construct) and has_ordered_pair(construct, "cmv", "gal80"):
+    if has_glandular_gal4_driver(construct) and has_uas_aureolin_responder(construct) and has_ordered_pair(construct, "constitutive_promoter", "gal80"):
         return "GAL80 is too broad and may repress the desired healing mist expression."
 
     if has_glandular_gal4_driver(construct) and has_uas_aureolin_responder(construct) and not has_airway_gal80_repression(construct):
@@ -976,11 +975,11 @@ def build_gal80_repression_feedback(outcome, constraints, construct):
 
 def build_forge_drake_feedback(outcome, constraints):
     if outcome == "success":
-        return "The design uses an inducible system that can be activated by handler-administered Dox Feed, while still requiring forge heat."
+        return "The design uses an inducible system that can be activated by handler-administered doxycycline, while still requiring forge heat."
 
     if outcome == "partial success":
         if not constraints.get("avoids_constitutive_pyroxin"):
-            return "Constitutive (CMV) promoter-driven Pyroxin-A6 expression is unsafe because it can bypass the required control conditions."
+            return "Constitutive promoter-driven Pyroxin-A6 expression is unsafe because it can bypass the required control conditions."
         if constraints.get("tet_system_present") and not constraints.get("temperature_control"):
             return "The handler-triggered inducible system is present, but forge heat is not required."
         if constraints.get("temperature_control") and not constraints.get("tet_system_present"):
@@ -990,11 +989,11 @@ def build_forge_drake_feedback(outcome, constraints):
         return "The Forge Drake design includes some required parts, but still lacks full dual-signal control."
 
     if not constraints.get("avoids_constitutive_pyroxin"):
-        return "Constitutive (CMV) promoter-driven Pyroxin-A6 expression is unsafe because it can bypass the required control conditions."
+        return "Constitutive promoter-driven Pyroxin-A6 expression is unsafe because it can bypass the required control conditions."
     if constraints.get("temperature_control") and not constraints.get("tet_system_present"):
         return "Fire production is still triggered by heat alone, indicating insufficient control."
 
-    return "The Forge Drake control system must require both high forge temperature and handler-administered Dox Feed activation."
+    return "The Forge Drake control system must require both high forge temperature and handler-administered doxycycline activation."
 
 
 def build_royal_guardian_feedback(outcome, constraints, construct):
@@ -1024,70 +1023,70 @@ def build_royal_guardian_feedback(outcome, constraints, construct):
 
 def build_nightfall_certification_feedback(outcome, constraints, construct):
     if outcome == "success":
-        return "The design keeps camouflage unavailable during training, then uses handler-approved Cre-ERT unlocking so Shadowmelanin follows the night cycle afterward."
+        return "The design keeps camouflage unavailable during training, then uses handler-approved Cre-ERT unlocking so Nyxmelanin follows the night cycle afterward."
 
-    if has_direct_night_shadowmelanin_expression(construct):
+    if has_direct_night_nyxmelanin_expression(construct):
         return "The camouflage follows the night cycle, but it is available before certification. The approval lock is missing."
 
-    if has_scale_cre_ert_construct(construct) and has_constitutive_shadowmelanin_expression(construct):
-        return "The approval unlock is present, but Shadowmelanin expression is not controlled by the night cycle."
+    if has_scale_cre_ert_construct(construct) and has_constitutive_nyxmelanin_expression(construct):
+        return "The approval unlock is present, but Nyxmelanin expression is not controlled by the night cycle."
 
     if has_locked_nightfall_cassette(construct) and not has_scale_cre_ert_construct(construct):
         return "The camouflage cassette is locked, but there is no handler-activated unlock system."
 
-    if has_scale_cre_ert_construct(construct) and not has_shadowmelanin(construct):
+    if has_scale_cre_ert_construct(construct) and not has_nyxmelanin(construct):
         return "The handler approval system is present, but there is no locked camouflage cassette for it to activate."
 
-    if has_constitutive_shadowmelanin_expression(construct):
-        return "Shadowmelanin would be expressed too broadly and without certification or circadian control."
+    if has_constitutive_nyxmelanin_expression(construct):
+        return "Nyxmelanin would be expressed too broadly and without certification or circadian control."
 
     if constraints.get("approval_unlock_present") and not constraints.get("circadian_control_present"):
-        return "The approval unlock is present, but Shadowmelanin expression is not controlled by the night cycle."
+        return "The approval unlock is present, but Nyxmelanin expression is not controlled by the night cycle."
 
     if constraints.get("circadian_control_present") and not constraints.get("approval_unlock_present"):
         return "The camouflage follows the night cycle, but it is available before certification. The approval lock is missing."
 
-    return "The Nightfall Drake design needs a handler-approved Cre-ERT unlock construct and a locked night-active Shadowmelanin cassette."
+    return "The Nightfall Drake design needs a handler-approved Cre-ERT unlock construct and a locked night-active Nyxmelanin cassette."
 
 
 def build_compulsive_hoarding_feedback(outcome, constraints, construct):
-    if has_neuro_silencer(construct):
-        return "Neuro-Silencer is too strong for this behavioral study. The goal is modulation, not broad suppression."
+    if has_gaba_amplifier(construct):
+        return "GABA-Amplifier is too strong for this behavioral study. The goal is modulation, not broad suppression."
 
-    if has_nucleus_accumbens_gal4_driver(construct) and has_uas_calm_channel_responder(construct) and not has_reward_neuron_recombinase_driver(construct):
+    if has_nucleus_accumbens_gal4_driver(construct) and has_uas_girk_channel_responder(construct) and not has_reward_neuron_recombinase_driver(construct):
         return "The intervention is restricted to the correct brain region, but it is not limited to the reward-sensitive neuron subtype."
 
-    if has_reward_neuron_recombinase_driver(construct) and has_locked_calm_channel_cassette(construct) and not has_nucleus_accumbens_gal4_driver(construct):
+    if has_reward_neuron_recombinase_driver(construct) and has_locked_girk_channel_cassette(construct) and not has_nucleus_accumbens_gal4_driver(construct):
         return "The reward-neuron condition is present, but there is no nucleus accumbens targeting. The intervention may affect reward-sensitive neurons outside the intended brain region."
 
     if (
         has_nucleus_accumbens_gal4_driver(construct)
         and has_reward_neuron_recombinase_driver(construct)
-        and has_locked_calm_channel_cassette(construct)
+        and has_locked_girk_channel_cassette(construct)
         and not has_bonding_gal80_exclusion(construct)
     ):
-        return "The core intersectional design is present, but there is no exclusion system to protect bonding-related neurons."
+        return "The core intersectional design is present, but there is no exclusion system to protect oxytocin-mediated bonding neurons."
 
-    if has_cmv_driven_behavioral_component(construct):
+    if has_constitutive_promoter_driven_behavioral_component(construct):
         return "The intervention is too broad and may suppress behavior globally rather than selectively reducing compulsive hoarding."
 
     if has_bonding_gal80_exclusion(construct) and not (
         has_nucleus_accumbens_gal4_driver(construct)
         or has_reward_neuron_recombinase_driver(construct)
-        or has_uas_calm_channel_responder(construct)
+        or has_uas_girk_channel_responder(construct)
     ):
         return "The exclusion system is present, but there is no targeted intervention to modify hoarding behavior."
 
     if outcome == "success":
-        return "The design layers nucleus accumbens GAL4, reward-neuron recombinase targeting, UAS-linked Calm-Channel, and bonding-neuron GAL80 to modulate the pathological circuit without broad behavioral suppression."
+        return "The design layers nucleus accumbens GAL4, reward-neuron recombinase targeting, UAS-linked GIRK channel, and oxytocin-neuron GAL80 to modulate the pathological circuit without broad behavioral suppression."
 
     if constraints.get("modulator_present") and not constraints.get("intersectional_logic_present"):
-        return "Calm-Channel is present, but the design needs layered GAL4/UAS and matching recombinase STOP-gate logic to restrict modulation to the intended neural intersection."
+        return "GIRK channel is present, but the design needs layered GAL4/UAS and matching recombinase STOP-gate logic to restrict modulation to the intended neural intersection."
 
     if constraints.get("intersectional_logic_present") and not constraints.get("bonding_exclusion_present"):
-        return "The intersectional targeting logic is present, but bonding-related neurons still need GAL80 protection."
+        return "The intersectional targeting logic is present, but oxytocin-producing bonding neurons still need GAL80 protection."
 
-    return "The compulsive hoarding model needs nucleus accumbens targeting, reward-neuron targeting, Calm-Channel modulation, matching STOP-gate recombination, and bonding-neuron exclusion."
+    return "The compulsive hoarding model needs nucleus accumbens targeting, reward-neuron targeting, GIRK channel modulation, matching STOP-gate recombination, and oxytocin-neuron exclusion."
 
 
 def construct_ids(construct):

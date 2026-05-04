@@ -24,11 +24,13 @@ def get_css():
     }
 
     .block-container {
-        max-width: 100%;
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
         padding-top: 3.5rem;
         padding-bottom: 4rem;
-        padding-left: 3rem;
-        padding-right: 3rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 
     section[data-testid="stSidebar"],
@@ -93,6 +95,12 @@ def get_css():
         font-size: 1rem;
     }
 
+    .centered-subtitle {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 2rem auto;
+    }
+
     .contract-card,
     .detail-panel,
     .base-card,
@@ -105,6 +113,7 @@ def get_css():
     }
 
     .contract-card {
+        align-items: flex-start;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
@@ -292,12 +301,14 @@ def get_css():
         border-radius: 999px;
         color: #315b51;
         display: inline-block;
+        align-self: flex-start;
         font-size: 0.72rem;
         font-weight: 800;
         letter-spacing: 0.08em;
         margin-bottom: 0.75rem;
         padding: 0.25rem 0.55rem;
         text-transform: uppercase;
+        width: fit-content;
     }
 
     .transition-note {

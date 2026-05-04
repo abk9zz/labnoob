@@ -10,7 +10,7 @@ def render():
         <section class="app-shell">
             <p class="eyebrow">Contract Board</p>
             <h1>Choose a Client</h1>
-            <p class="intro small">
+            <p class="intro small centered-subtitle">
                 Review the waiting contracts and select one hatchery commission to begin.
             </p>
         </section>

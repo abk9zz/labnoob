@@ -1,0 +1,118 @@
+PROMOTERS
+
+1. Constitutive promoter
+Description: Constitutive promoter that drives broad gene expression across many cell types.
+
+2. Wing pattern promoter
+Description: Tissue-specific promoter active only in wing pattern cells.
+
+3. Laryngeal gland promoter
+Description: Tissue-specific promoter active in laryngeal combustion glands.
+
+4. Glandular promoter
+Description: Broad secretory promoter active in mist-producing glands and other secretory cells.
+
+5. Airway promoter
+Description: Tissue-specific promoter active in respiratory epithelial cells.
+
+6. Heat-responsive promoter
+Description: Temperature-sensitive promoter that activates transcription under high-temperatures.
+
+7. TetO promoter
+Description: Inducible promoter activated by rtTA when doxycycline is present.
+
+8. Venom gland promoter
+Description: Tissue-specific promoter active in venom-producing glands.
+
+9. Molting-stage promoter
+Description: Developmental promoter active during the first maturity molt, regulated by hormone-driven transcriptional changes.
+
+10. Night-active promoter
+Description: Circadian promoter that drives gene expression during the night phase of the internal biological clock.
+
+11. Scale pigment promoter
+Description: Tissue-specific promoter active in pigment-producing scale cells.
+
+12. Nucleus accumbens promoter
+Description: Region-specific promoter active in nucleus accumbens neurons.
+
+13. Reward-neuron promoter
+Description: Cell-type promoter active in reward-sensitive neuron populations.
+
+14. Oxytocin-neuron promoter
+Description: Promoter active in oxytocin-producing neurons involved in social bonding and attachment behaviors.
+
+------------------------------------
+
+CONTROL SYSTEMS
+
+1. rtTA activator
+Description: Doxycycline-responsive transcriptional activator. It activates TetO-controlled expression only when doxycycline is present.
+
+2. GAL4
+Description: Transcriptional activator that binds UAS and turns on UAS-linked genes.
+
+3. UAS
+Description: Upstream activating sequence that requires GAL4 to drive expression.
+
+4. GAL80 repressor
+Description: Repressor that binds GAL4 and prevents GAL4 from activating UAS-linked genes.
+
+5. Cre recombinase
+Description: Site-specific recombinase that recognizes loxP sequences.
+
+6. loxP site
+Description: DNA recognition sequence targeted by Cre recombinase.
+
+7. Cre-ERT
+Description: Drug-activated recombinase system that becomes active only after handler-administered activation.
+
+8. FLP recombinase
+Description: Site-specific recombinase that recognizes FRT sequences.
+
+9. FRT site
+Description: DNA recognition sequence targeted by FLP recombinase.
+
+------------------------------------
+
+GENES
+
+1. Pyroxin-A6
+Description: Thermogenic effector protein responsible for combustion and heat generation.
+
+2. Pyroxin-A23
+Description: Thermogenic effector protein that drives high-intensity combustion and extreme heat output. Functional variant of Pyroxin-A6 with enhanced activity.
+
+3. Lumina-Blue
+Description: Bioluminescent protein that produces blue glow.
+
+4. Lumina-Green
+Description: Bioluminescent protein that produces green glow.
+
+5. Lumina-Gold
+Description: Bioluminescent protein that produces gold glow.
+
+6. Aureolin
+Description: Therapeutic protein that supports wound repair when secreted as healing mist.
+
+7. Virexin
+Description: Effector protein responsible for venom production.
+
+8. Nyxmelanin
+Description: Pigment effector responsible for dark, light-absorbing scale coloration.
+
+9. GIRK channel
+Description: Neural effector that reduces overactivation by increasing inhibitory potassium channel signaling without damaging neurons.
+
+10. GABA-Amplifier
+Description: Strong inhibitory effector that broadly suppresses neural activity through enhanced inhibitory signaling.
+
+------------------------------------
+
+SPECIAL ELEMENTS
+
+1. STOP cassette
+Description: Transcriptional blocking sequence that prevents expression of downstream genes.
+
+2. PolyA terminator
+Description: Sequence that signals the end of transcription and adds a polyadenylation tail.

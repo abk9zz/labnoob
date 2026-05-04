@@ -19,11 +19,11 @@ def render_request():
             <div class="species-pill">Species: {species}</div>
             <div class="trial-assignment">
                 <strong>{scenario["assignment_label"]}</strong>
-                <p>{scenario["assignment_description"]}</p>
+                <p class="centered-subtitle">{scenario["assignment_description"]}</p>
             </div>
             <p class="eyebrow">Active Contract</p>
             <h1>{scenario["builder_title"]}</h1>
-            <h2>{client["name"]} -- {client["title"]}</h2>
+            <h2 class="centered-subtitle">{client["name"]} -- {client["title"]}</h2>
         </section>
         """,
         unsafe_allow_html=True,

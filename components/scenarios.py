@@ -88,7 +88,7 @@ Be mindful of this distinction as you design your system.
         "difficulty": "Beginner",
         "species": {
             "name": "Display Dragon",
-            "summary": "Performance lineage suited for visible wing-pattern traits",
+            "summary": "Performance lineage suited for visible wing pattern traits",
             "description": "Display dragons are bred for safe visual traits during choreographed flight.",
             "badge": "Selected for Beginner Contract",
         },
@@ -293,7 +293,7 @@ Think about whether there is a way to keep the broad usefulness of the glandular
         "guidance": [
             "Restrict expression to laryngeal combustion glands",
             "Avoid expression from heat alone or handler activation alone",
-            "Ensure activation only under both forge heat and deliberate Dox-triggered control",
+            "Ensure activation only under both forge heat and deliberate doxycycline-triggered control",
             "Preserve full Pyroxin-A6 fire output when both conditions are met",
         ],
         "goal": "",
@@ -536,7 +536,7 @@ Think carefully about how to separate those two layers.
 -- Dr. Elara Voss
 """,
         "requirements": [
-            "shadowmelanin_present",
+            "nyxmelanin_present",
             "circadian_control_present",
             "approval_unlock_present",
             "stop_blocks_training_expression",
@@ -597,6 +597,8 @@ Despite this, the behavior is consistent and measurable, which makes it an ideal
 
 Through prior work, my team has narrowed this behavior to activity in the nucleus accumbens and to a subset of reward-sensitive neurons. Reward-sensitive neurons are not exclusive to the nucleus accumbens; related populations exist across multiple brain regions, so region targeting and cell-type targeting are both required.
 
+My team is well aware that social bonding in these animals is strongly associated with oxytocin-expressing neurons. Preserving this system is critical. The compulsive hoarding behavior, however, appears to be driven by reward-processing circuits within the nucleus accumbens. These systems overlap anatomically but must be treated independently.
+
 I am not interested in eliminating this system.
 
 I am interested in selectively reducing its pathological activation.
@@ -634,6 +636,8 @@ The client has already identified the relevant brain region, the nucleus accumbe
 
 Those reward-sensitive neurons are not exclusive to the nucleus accumbens. Related populations exist in multiple brain regions, which means neuron subtype targeting alone would be too broad and region targeting alone would affect too many cells.
 
+Oxytocin-producing neurons are equally important to this design. They support social bonding and attachment behaviors, and they must be preserved while the reward circuit is modulated.
+
 That should immediately tell you that a single layer of control will not be sufficient.
 
 If you target the entire region, you will affect behaviors that are not part of the problem. If you target the wrong cell population, you will miss the effect entirely. If your system is too broad, you will suppress the animal rather than refine its behavior.
@@ -643,6 +647,12 @@ You will need to think in terms of overlap.
 Where is the system active? Which cells are involved? Which cells must be excluded?
 
 And most importantly, how do you ensure that your intervention is present only where those conditions intersect?
+
+- Target the nucleus accumbens
+- Target reward-sensitive neurons specifically
+- Preserve oxytocin-mediated bonding behavior
+- Avoid global neural suppression
+- Recognize that neuron subtypes exist across multiple regions
 
 There is no single correct design for this case. There are, however, many ways to fail it.
 
@@ -670,7 +680,7 @@ Dr. Elara Voss
             "Restrict expression to reward-sensitive neurons within the nucleus accumbens",
             "Avoid expression in reward-sensitive neurons outside the nucleus accumbens",
             "Ensure activation only where BOTH region targeting and neuron subtype targeting overlap",
-            "Preserve bonding behavior at all costs",
+            "Preserve oxytocin-mediated bonding behavior at all costs",
             "Avoid global suppression",
             "Target BOTH region AND neuron subtype",
         ],
