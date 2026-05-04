@@ -1,1 +1,1 @@
-"""Reusable UI components for the lab notebook app."""
+"""Reusable components for the Dragon Hatchery app."""
