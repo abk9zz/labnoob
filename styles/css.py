@@ -24,7 +24,7 @@ def get_css():
     }
 
     .block-container {
-        max-width: 1100px;
+        max-width: 980px;
         margin-left: auto;
         margin-right: auto;
         padding-top: 3.5rem;
@@ -47,6 +47,25 @@ def get_css():
         max-width: 900px;
         margin: 0 auto 1.5rem auto;
         text-align: center;
+    }
+
+    .app-shell,
+    .app-shell h1,
+    .app-shell h2,
+    .app-shell h3,
+    .app-shell p,
+    .app-shell div,
+    .app-shell strong {
+        text-align: center !important;
+    }
+
+    .app-shell p,
+    .app-shell h2,
+    .centered-subtitle {
+        max-width: 700px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
     }
 
     .cover-shell {
@@ -96,9 +115,9 @@ def get_css():
     }
 
     .centered-subtitle {
-        text-align: center;
         max-width: 700px;
         margin: 0 auto 2rem auto;
+        text-align: center !important;
     }
 
     .contract-card,

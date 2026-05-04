@@ -186,7 +186,7 @@ Remember, sometimes a successful design is not just the one that works today. It
         "client": {
             "name": "Sister Maela Vire",
             "title": "Warden of the Verdant Hospice",
-            "short_description": "Provides palliative care using therapeutic mist dragons and requires strict control to prevent respiratory irritation in vulnerable patients.",
+            "short_description": "Provides palliative care using therapeutic mist dragons and requires strict control of mist secretion.",
             "request_summary": "Create healing mist expression while blocking harmful airway expression.",
         },
         "client_letter": """
