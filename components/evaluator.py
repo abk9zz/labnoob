@@ -34,7 +34,7 @@ CONSTRAINT_LABELS = {
     "region_targeting_present": "Use the nucleus accumbens promoter to drive GAL4 in the target brain region.",
     "reward_neuron_targeting_present": "Use the Reward-neuron promoter to drive a recombinase in the relevant cell population.",
     "modulator_present": "Use GIRK channel as the behavioral modulator.",
-    "intersectional_logic_present": "Combine GAL4/UAS control with a recombinase-removable STOP lock upstream of GIRK channel.",
+    "intersectional_logic_present": "Combine GAL4/UAS control with a recombinase-removable STOP lock upstream of GIRK channel or GAL4.",
     "bonding_exclusion_present": "Use the Oxytocin-neuron promoter to drive GAL80 in oxytocin-producing bonding neurons.",
     "avoids_global_suppression": "Avoid Constitutive promoter-driven neural control and use GIRK channel instead of GABA-Amplifier.",
 }
@@ -641,11 +641,49 @@ def has_locked_girk_channel_cassette_with_site(construct, site_id):
     return False
 
 
+def has_locked_gal4_cassette_with_site(construct, site_id):
+    for cassette in normalize_constructs(construct):
+        ids = construct_ids(cassette)
+        gal4_index = first_index(ids, "gal4")
+        if gal4_index is None:
+            continue
+
+        promoter_index = first_index(ids, "nucleus_accumbens_promoter")
+        if promoter_index is None or promoter_index > gal4_index:
+            continue
+
+        for first_site in range(promoter_index + 1, gal4_index):
+            if ids[first_site] != site_id:
+                continue
+            for stop_index in range(first_site + 1, gal4_index):
+                if ids[stop_index] != "stop_cassette":
+                    continue
+                for second_site in range(stop_index + 1, gal4_index):
+                    if ids[second_site] == site_id:
+                        return not has_intervening_promoter(cassette, promoter_index, gal4_index)
+    return False
+
+
 def has_locked_girk_channel_cassette(construct):
     return (
         has_locked_girk_channel_cassette_with_site(construct, "loxp")
         or has_locked_girk_channel_cassette_with_site(construct, "frt")
     )
+
+
+def has_locked_gal4_cassette(construct):
+    return (
+        has_locked_gal4_cassette_with_site(construct, "loxp")
+        or has_locked_gal4_cassette_with_site(construct, "frt")
+    )
+
+
+def has_reward_neuron_recombinase_driver_for_site(construct, site_id):
+    if site_id == "loxp":
+        return has_reward_neuron_cre_driver(construct)
+    if site_id == "frt":
+        return has_reward_neuron_flp_driver(construct)
+    return False
 
 
 def has_separate_nacc_gal4_and_reward_recombinase_constructs(construct):
@@ -664,13 +702,35 @@ def has_separate_nacc_gal4_and_reward_recombinase_constructs(construct):
     return False
 
 
-def has_compulsive_intersectional_logic(construct):
+def has_compulsive_girk_stop_gate_logic(construct):
     ids = all_construct_ids(construct)
-    return (
-        "uas" in ids
-        and has_uas_girk_channel_responder(construct)
-        and has_locked_girk_channel_cassette(construct)
+    if "uas" not in ids or not has_uas_girk_channel_responder(construct):
+        return False
+
+    return any(
+        has_locked_girk_channel_cassette_with_site(construct, site_id)
+        and has_reward_neuron_recombinase_driver_for_site(construct, site_id)
         and has_separate_nacc_gal4_and_reward_recombinase_constructs(construct)
+        for site_id in ("loxp", "frt")
+    )
+
+
+def has_compulsive_gal4_stop_gate_logic(construct):
+    ids = all_construct_ids(construct)
+    if "uas" not in ids or not has_uas_girk_channel_responder(construct):
+        return False
+
+    return any(
+        has_locked_gal4_cassette_with_site(construct, site_id)
+        and has_reward_neuron_recombinase_driver_for_site(construct, site_id)
+        for site_id in ("loxp", "frt")
+    )
+
+
+def has_compulsive_intersectional_logic(construct):
+    return (
+        has_compulsive_girk_stop_gate_logic(construct)
+        or has_compulsive_gal4_stop_gate_logic(construct)
     )
 
 
@@ -1078,12 +1138,16 @@ def build_compulsive_hoarding_feedback(outcome, constraints, construct):
         return "The exclusion system is present, but there is no targeted intervention to modify hoarding behavior."
 
     if outcome == "success":
+        if has_compulsive_gal4_stop_gate_logic(construct):
+            return "The recombinase-removable STOP cassette correctly gates the GAL4 driver, which then activates UAS-linked GIRK channel only in the intended intersection."
         return "The design layers nucleus accumbens GAL4, reward-neuron recombinase targeting, UAS-linked GIRK channel, and oxytocin-neuron GAL80 to modulate the pathological circuit without broad behavioral suppression."
 
     if constraints.get("modulator_present") and not constraints.get("intersectional_logic_present"):
         return "GIRK channel is present, but the design needs layered GAL4/UAS and matching recombinase STOP-gate logic to restrict modulation to the intended neural intersection."
 
     if constraints.get("intersectional_logic_present") and not constraints.get("bonding_exclusion_present"):
+        if has_compulsive_gal4_stop_gate_logic(construct):
+            return "The recombinase-removable STOP cassette correctly gates the GAL4 driver, which then activates UAS-linked GIRK channel only in the intended intersection."
         return "The intersectional targeting logic is present, but oxytocin-producing bonding neurons still need GAL80 protection."
 
     return "The compulsive hoarding model needs nucleus accumbens targeting, reward-neuron targeting, GIRK channel modulation, matching STOP-gate recombination, and oxytocin-neuron exclusion."

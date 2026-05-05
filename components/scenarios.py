@@ -649,7 +649,7 @@ There is no single correct design for this case. There are, however, many ways t
 
 I will not be evaluating whether your construct matches mine.
 
-I will be evaluating whether your reasoning is sound.
+I will be evaluating whether your reasoning is sound. And remember, I am always looking for the simplest design that will get the job done, added complexities can have unintended effects.
 
 Dr. Elara Voss
 """,
