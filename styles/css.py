@@ -121,6 +121,14 @@ def get_css():
         padding-top: 4rem;
     }
 
+    .cover-logo {
+        display: block;
+        height: auto;
+        margin: 0 auto 1rem auto;
+        max-width: 220px;
+        width: min(42vw, 220px);
+    }
+
     .eyebrow {
         margin: 0 0 0.5rem 0;
         color: var(--ember-dark);
@@ -208,6 +216,13 @@ def get_css():
         min-height: 196px;
         padding: 1.25rem;
         text-align: left;
+        transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+    }
+
+    .contract-card:hover {
+        border-color: rgba(90, 42, 131, 0.32);
+        box-shadow: 0 14px 30px rgba(61, 35, 16, 0.12), 0 0 18px rgba(90, 42, 131, 0.18);
+        transform: translateY(-1px);
     }
 
     .contract-card h3 {
